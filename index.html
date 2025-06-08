@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Theory</title>
+    <!-- Font Awesome CDN (version 6.6.0) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Prism.js for syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <!-- SheetJS for XLSX processing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0 auto;
+        max-width: 900px;
+        padding: 20px;
+        color: #000000;
+        background-color: #FFFFFF;
+      }
+      h1, h2, h3 {
+        color: #34C759;
+      }
+      pre {
+        background-color: #F1F1F1;
+        padding: 15px;
+        border: 1px solid #34C759;
+        border-radius: 4px;
+        overflow-x: auto;
+        margin-bottom: 15px;
+      }
+      code {
+        font-family: 'Courier New', Courier, monospace;
+      }
+      .lab-section {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        margin-bottom: 30px;
+        overflow: hidden;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease;
+        border: 2px solid #34C759;
+      }
+      .section {
+        margin-bottom: 30px;
+        padding: 25px;
+        background: #f8f9fa;
+        border-radius: 15px;
+        border-left: 5px solid #34C759;
+        transition: all 0.3s ease;
+      }
+      .result {
+        background-color: #FFFFFF;
+        border: 1px solid #34C759;
+        border-radius: 4px;
+        padding: 15px;
+        margin-top: 15px;
+        min-height: 30px;
+        word-wrap: break-word;
+      }
+      .header {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        position: relative;
+      }
+      .logo {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        max-width: 100px;
+        height: auto;
+      }
+      a.sample-link:hover {
+        color: green;
+      }
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        margin-bottom: 15px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      .note {
+        background-color: #e7f3e7;
+        padding: 10px;
+        border-left: 4px solid #34C759;
+        margin-top: 10px;
+      }
+      nav.toc {
+        background: #f8f9fa;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+      nav.toc ul {
+        list-style: none;
+        padding: 0;
+      }
+      nav.toc li {
+        margin: 5px 0;
+      }
+      nav.toc a {
+        color: #34C759;
+        text-decoration: none;
+      }
+      nav.toc a:hover {
+        text-decoration: underline;
+      }
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        body {
+          padding: 15px;
+          font-size: 16px;
+        }
+        h1, h2, h3 {
+          font-size: 1.5em;
+        }
+        .lab-section {
+          margin-bottom: 20px;
+          padding: 10px;
+        }
+        .section {
+          padding: 15px;
+        }
+      }
+    </style>
+    <script type="text/javascript">
+      var gk_isXlsx = false;
+      var gk_xlsxFileLookup = {};
+      var gk_fileData = {};
+      function filledCell(cell) {
+        return cell !== '' && cell != null;
+      }
+      function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+          try {
+            var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+            var firstSheetName = workbook.SheetNames[0];
+            var worksheet = workbook.Sheets[firstSheetName];
+            var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+            var filteredData = jsonData.filter(row => row.some(filledCell));
+            var headerRowIndex = filteredData.findIndex((row, index) =>
+              row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+            );
+            if (headerRowIndex === -1 || headerRowIndex > 25) {
+              headerRowIndex = 0;
+            }
+            var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex));
+            csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+            return csv;
+          } catch (e) {
+            console.error(e);
+            return "";
+          }
+        }
+        return gk_fileData[filename] || "";
+      }
+    </script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>CSS Theory</h1>
+      <p>Van Lang University, Faculty of Information Technology</p>
+      <p>Course: Web Application Programming - Lecturer: Master Nguyen Thai Anh</p>
+      <img src="https://tonkinmedia.vn/wp-content/uploads/2023/03/wiwn8912WI_logo-vhubnew-2.png" alt="Van Lang University Logo" class="logo">
+    </div>
+
+    <!-- Table of Contents -->
+    <nav class="toc">
+      <h2>Table of Contents</h2>
+      <ul>
+        <li><a href="#section1">1. What is CSS?</a></li>
+        <li><a href="#section2">2. CSS Syntax</a></li>
+        <li><a href="#section3">3. Basic CSS Selectors</a></li>
+        <li><a href="#section4">4. CSS How To</a></li>
+        <li><a href="#section5">5. CSS Comments</a></li>
+        <li><a href="#section6">6. CSS Colors</a></li>
+        <li><a href="#section7">7. CSS Backgrounds</a></li>
+        <li><a href="#section8">8. CSS Borders</a></li>
+        <li><a href="#section9">9. CSS Margins</a></li>
+        <li><a href="#section10">10. CSS Padding</a></li>
+        <li><a href="#section11">11. CSS Height/Width</a></li>
+        <li><a href="#section12">12. The CSS Box Model</a></li>
+        <li><a href="#section13">13. CSS Outline</a></li>
+        <li><a href="#section14">14. CSS Text</a></li>
+        <li><a href="#section15">15. CSS Fonts</a></li>
+        <li><a href="#section16">16. CSS Icons</a></li>
+        <li><a href="#section17">17. CSS Links</a></li>
+        <li><a href="#section18">18. CSS Lists</a></li>
+        <li><a href="#section19">19. CSS Tables</a></li>
+        <li><a href="#section20">20. CSS Display</a></li>
+        <li><a href="#section21">21. CSS Max-width</a></li>
+        <li><a href="#section22">22. CSS Position</a></li>
+        <li><a href="#section23">23. CSS Z-index</a></li>
+        <li><a href="#section24">24. CSS Overflow</a></li>
+        <li><a href="#section25">25. CSS Float</a></li>
+        <li><a href="#section26">26. CSS Cascade and Specificity</a></li>
+        <li><a href="#section27">27. Best Practices for Organizing CSS</a></li>
+        <li><a href="#section28">28. Introduction to Responsive Design</a></li>
+        <li><a href="#section29">29. CSS Flexbox</a></li>
+        <li><a href="#section30">30. CSS Grid</a></li>
+      </ul>
+    </nav>
+
+    <!-- Section 1: What is CSS? -->
+    <div class="lab-section" id="section1">
+      <div class="section">
+        <h2>1. What is CSS?</h2>
+        <p><strong>CSS</strong> (Cascading Style Sheets) is a styling language used to describe the presentation of HTML documents, controlling aspects like colors, fonts, layouts, and spacing. It separates content (HTML) from design (CSS), enabling easier maintenance and consistent styling across multiple pages.</p>
+        <p><strong>Purpose:</strong> CSS enhances the visual appeal, ensures cross-device compatibility, and improves user experience by making websites visually engaging and accessible.</p>
+        <p><strong>How it works:</strong> CSS uses rules comprising selectors (to target HTML elements) and declarations (property-value pairs). Rules cascade, meaning later rules can override earlier ones based on specificity and order.</p>
+        <p><strong>Real-World Use Case:</strong> CSS is used to style e-commerce websites, ensuring product cards have consistent fonts, colors, and spacing, enhancing brand identity.</p>
+        <h3>Example 1: Styling a heading and paragraph</h3>
+        <pre class="language-css">
+h1 {
+  color: #34C759;
+  font-size: 2.5em;
+  text-align: center;
+}
+p {
+  font-size: 1.1em;
+  line-height: 1.8;
+}
+        </pre>
+        <div class="result">
+          <h1 style="color: #34C759; font-size: 2.5em; text-align: center;">Welcome to CSS</h1>
+          <p style="font-size: 1.1em; line-height: 1.8;">This is a styled paragraph demonstrating CSS properties.</p>
+        </div>
+        <p><strong>Tip:</strong> Use CSS preprocessors like Sass to manage large stylesheets with variables and mixins, improving scalability for complex projects.</p>
+        <div class="note">
+          <p><strong>Note:</strong> Always link external CSS files for large projects to keep HTML clean and enable caching for faster page loads.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: CSS Syntax -->
+    <div class="lab-section" id="section2">
+      <div class="section">
+        <h2>2. CSS Syntax</h2>
+        <p>CSS syntax consists of a selector and a declaration block. The selector targets HTML elements, and the declaration block, enclosed in curly braces <code>{}</code>, contains property-value pairs separated by colons <code>:</code> and terminated by semicolons <code>;</code>.</p>
+        <p><strong>Structure:</strong> <code>selector { property: value; property: value; }</code></p>
+        <p><strong>Common Mistakes:</strong> Missing semicolons or curly braces can cause styles to fail. Always validate syntax using tools like CSSLint.</p>
+        <h3>Example 1: Styling a paragraph with multiple properties</h3>
+        <pre class="language-css">
+p {
+  color: #333;
+  font-size: 16px;
+  text-align: justify;
+  padding: 10px;
+}
+        </pre>
+        <div class="result">
+          <p style="color: #333; font-size: 16px; text-align: justify; padding: 10px;">This paragraph demonstrates CSS syntax with multiple properties for text styling and spacing.</p>
+        </div>
+        <p><strong>Practical Application:</strong> Use consistent syntax in team projects by adopting style guides (e.g., Airbnb CSS Guide) to ensure readability and maintainability.</p>
+        <h3>Example 2: Combining multiple selectors</h3>
+        <pre class="language-css">
+h1, h2, .highlight {
+  color: #34C759;
+  font-weight: bold;
+}
+        </pre>
+        <div class="result">
+          <h1 style="color: #34C759; font-weight: bold;">Heading 1</h1>
+          <h2 style="color: #34C759; font-weight: bold;">Heading 2</h2>
+          <p class="highlight" style="color: #34C759; font-weight: bold;">Highlighted Text</p>
+        </div>
+        <div class="note">
+          <p><strong>Tip:</strong> Use shorthand properties (e.g., <code>font</code> instead of separate <code>font-size</code>, <code>font-weight</code>) to reduce code length.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Basic CSS Selectors -->
+    <div class="lab-section" id="section3">
+      <div class="section">
+        <h2>3. Basic CSS Selectors</h2>
+        <p>Selectors identify HTML elements to style. They range from simple (tag names) to complex (combinators and pseudo-classes).</p>
+        <p><strong>Types of Selectors:</strong></p>
+        <ul>
+          <li><strong>Type Selector</strong>: Targets elements by tag name.</li>
+          <h3>Example 1: Styling all <code>h1</code> elements</h3>
+          <pre class="language-css">
+h1 {
+  color: navy;
+  text-transform: uppercase;
+}
+          </pre>
+          <div class="result">
+            <h1 style="color: navy; text-transform: uppercase;">Type Selector</h1>
+          </div>
+          <li><strong>Class Selector</strong>: Targets elements with a specific class.</li>
+          <h3>Example 2: Styling elements with class <code>.intro</code></h3>
+          <pre class="language-css">
+.intro {
+  background-color: #e7f3e7;
+  padding: 15px;
+}
+          </pre>
+          <div class="result">
+            <p class="intro" style="background-color: #e7f3e7; padding: 15px;">This is an introductory text.</p>
+          </div>
+          <li><strong>ID Selector</strong>: Targets a single element with a unique ID.</li>
+          <h3>Example 3: Styling an element with ID <code>main-header</code></h3>
+          <pre class="language-css">
+#main-header {
+  font-size: 28px;
+  border-bottom: 2px solid #34C759;
+}
+          </pre>
+          <div class="result">
+            <h1 id="main-header" style="font-size: 28px; border-bottom: 2px solid #34C759;">Main Header</h1>
+          </div>
+          <li><strong>Universal Selector</strong>: Targets all elements.</li>
+          <h3>Example 4: Resetting margins and padding</h3>
+          <pre class="language-css">
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+          </pre>
+          <div class="result">
+            <p style="margin: 0; padding: 0; box-sizing: border-box; border: 1px solid #000;">Text with no margin or padding.</p>
+          </div>
+          <li><strong>Attribute Selector</strong>: Targets elements by attribute values.</li>
+          <h3>Example 5: Styling inputs with type <code>text</code></h3>
+          <pre class="language-css">
+input[type="text"] {
+  border: 1px solid #34C759;
+  padding: 5px;
+}
+          </pre>
+          <div class="result">
+            <input type="text" style="border: 1px solid #34C759; padding: 5px;" placeholder="Enter text">
+          </div>
+        </ul>
+        <h3>Example 6: Using a pseudo-class for interactivity</h3>
+        <pre class="language-css">
+button:hover {
+  background-color: #2a9d4a;
+  transform: scale(1.05);
+}
+        </pre>
+        <div class="result">
+          <style>
+            .hover-button:hover {
+              background-color: #2a9d4a;
+              transform: scale(1.05);
+              transition: all 0.3s ease;
+            }
+          </style>
+          <button class="hover-button" style="background-color: #34C759; color: white; padding: 10px; border: none;">Hover Me</button>
+        </div>
+        <div class="note">
+          <p><strong>Tip:</strong> Combine selectors (e.g., <code>.class1.class2</code>) for specificity, but avoid overly complex selectors to maintain readability.</p>
+        </div>
+      </div>
+    </div>
+
+ <!-- Section 4: CSS How To -->
+<div class="lab-section" id="section4">
+  <div class="section">
+    <h2>4. CSS How To</h2>
+    <p>CSS can be applied in three ways, each suited for different use cases. Understanding their precedence and best practices is key to effective styling.</p>
+    <p><strong>Three Methods:</strong></p>
+    <ul>
+      <li><strong>External CSS</strong>: Uses a separate <code>.css</code> file linked via <code>&lt;link&gt;</code>. Ideal for site-wide styles.</li>
+      <h3>Example 1: Linking and styling with an external file</h3>
+      <pre class="language-html">
+&lt;link rel="stylesheet" href="styles.css"&gt;
+      </pre>
+      <p>Content of <code>styles.css</code>:</p>
+      <pre class="language-css">
+body {
+  background-color: #f8f9fa;
+}
+h1 {
+  color: #34C759;
+  margin: 20px;
+}
+      </pre>
+      <div class="result">
+        <div style="background-color: #f8f9fa;">
+          <h1 style="color: #34C759; margin: 20px;">External CSS Heading</h1>
+          <p>Styled via external CSS.</p>
+        </div>
+      </div>
+      <li><strong>Internal CSS</strong>: Uses a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code>. Suitable for single-page styles.</li>
+      <h3>Example 2: Internal styles for a landing page</h3>
+      <pre class="language-html">
+&lt;style&gt;
+  body {
+    background-color: #e7f3e7;
+  }
+  h1 {
+    color: #2a9d4a;
+    text-align: center;
+  }
+&lt;/style&gt;
+      </pre>
+      <div class="result">
+        <div style="background-color: #e7f3e7;">
+          <h1 style="color: #2a9d4a; text-align: center;">Internal CSS Heading</h1>
+          <p>Styled via internal CSS.</p>
+        </div>
+      </div>
+      <li><strong>Inline CSS</strong>: Uses the <code>style</code> attribute on elements. Best for quick, one-off styles.</li>
+      <h3>Example 3: Inline styling for a unique element</h3>
+      <pre class="language-html">
+&lt;h1 style="color: #34C759; font-size: 24px;"&gt;Inline Heading&lt;/h1&gt;
+&lt;p style="color: #333; font-style: italic;"&gt;Inline Paragraph&lt;/p&gt;
+      </pre>
+      <div class="result">
+        <h1 style="color: #34C759; font-size: 24px;">Inline Heading</h1>
+        <p style="color: #333; font-style: italic;">Inline Paragraph</p>
+      </div>
+    </ul>
+    <p><strong>Cascading Order:</strong> Styles are applied in this priority (highest to lowest):</p>
+    <ol>
+      <li>Inline styles</li>
+      <li>Internal/External styles (based on specificity and order)</li>
+      <li>Browser defaults</li>
+    </ol>
+    <h3>Example 4: Demonstrating style precedence</h3>
+    <pre class="language-html">
+&lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;style&gt;
+  h1 {
+    color: orange;
+  }
+&lt;/style&gt;
+&lt;h1 style="color: blue;"&gt;Precedence Heading&lt;/h1&gt;
+    </pre>
+    <div class="result">
+      <h1 style="color: blue;">Precedence Heading</h1>
+      <p><em>Inline style (blue) overrides internal/external styles.</em></p>
+    </div>
+    <p><strong>Real-World Use Case:</strong> External CSS is used in content management systems (e.g., WordPress) to apply consistent themes across all pages.</p>
+    <div class="note">
+      <p><strong>Tip:</strong> Minimize inline CSS to avoid maintenance issues. Use CSS classes for reusable styles.</p>
+    </div>
+  </div>
+</div>
+
+    <!-- Section 5: CSS Comments -->
+    <div class="lab-section" id="section5">
+      <div class="section">
+        <h2>5. CSS Comments</h2>
+        <p>CSS comments, written between <code>/* */</code>, are ignored by browsers. They document code, explain decisions, or temporarily disable styles.</p>
+        <p><strong>Benefits:</strong> Improve team collaboration, aid debugging, and maintain code clarity in large projects.</p>
+        <h3>Example 1: Using comments for organization</h3>
+        <pre class="language-css">
+/* Navigation Bar Styles */
+nav {
+  background-color: #34C759;
+  /* padding: 15px; */ /* Disabled for now */
+  color: white;
+}
+
+/* Reset default margins */
+* {
+  margin: 0;
+}
+        </pre>
+        <div class="result">
+          <nav style="background-color: #34C759; color: white;">Sample Navigation</nav>
+          <p style="margin: 0;">Text with reset margin.</p>
+        </div>
+        <h3>Example 2: Commenting for debugging</h3>
+        <pre class="language-css">
+/* Testing button styles */
+button {
+  background-color: #34C759;
+  /* background-color: red; */ /* Alternative color for testing */
+  padding: 10px;
+}
+        </pre>
+        <div class="result">
+          <button style="background-color: #34C759; padding: 10px; color: white;">Test Button</button>
+        </div>
+        <div class="note">
+          <p><strong>Tip:</strong> Use multi-line comments for section headers and single-line comments for inline notes. Avoid over-commenting obvious styles.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6: CSS Colors -->
+    <div class="lab-section" id="section6">
+      <div class="section">
+        <h2>6. CSS Colors</h2>
+        <p>CSS supports multiple color formats: names, hexadecimal, RGB, RGBA (with opacity), HSL, and HSLA. Choosing the right format depends on design needs and accessibility.</p>
+        <p><strong>Color Formats:</strong></p>
+        <ul>
+          <li><strong>Name</strong>: Simple, but limited (e.g., <code>red</code>).</li>
+          <li><strong>Hex</strong>: Precise, widely used (e.g., <code>#ff0000</code>).</li>
+          <li><strong>RGB</strong>: Defines red, green, blue values (e.g., <code>rgb(255, 0, 0)</code>).</li>
+          <li><strong>RGBA</strong>: Adds alpha for opacity (e.g., <code>rgba(255, 0, 0, 0.5)</code>).</li>
+          <li><strong>HSL</strong>: Hue, saturation, lightness for intuitive adjustments.</li>
+        </ul>
+        <h3>Example 1: Applying different color formats</h3>
+        <pre class="language-css">
+p.name {
+  color: red;
+}
+p.hex {
+  background-color: #ff0000;
+  color: white;
+}
+p.rgb {
+  color: rgb(255, 0, 0);
+}
+p.rgba {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+p.hsl {
+  color: hsl(0, 100%, 50%);
+}
+        </pre>
+        <div class="result">
+          <p style="color: red;">Color Name</p>
+          <p style="background-color: #ff0000; color: white;">Hex Code</p>
+          <p style="color: rgb(255, 0, 0);">RGB</p>
+          <p style="background-color: rgba(255, 0, 0, 0.3);">RGBA (30% opacity)</p>
+          <p style="color: hsl(0, 100%, 50%);">HSL</p>
+        </div>
+        <p><strong>Accessibility Tip:</strong> Ensure contrast ratios meet WCAG guidelines (4.5:1 for normal text). Use tools like WebAIM’s Contrast Checker.</p>
+        <h3>Example 2: Using HSL for dynamic theming</h3>
+        <pre class="language-css">
+:root {
+  --base-hue: 120;
+}
+button {
+  background-color: hsl(var(--base-hue), 50%, 50%);
+}
+        </pre>
+        <div class="result">
+          <button style="background-color: hsl(120, 50%, 50%); color: white; padding: 10px;">Dynamic Color</button>
+        </div>
+        <div class="note">
+          <p><strong>Tip:</strong> Use CSS variables with HSL for theming, as hue adjustments are intuitive for creating color variations. Always test contrast for accessibility.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7: CSS Backgrounds -->
+    <div class="lab-section" id="section7">
+      <div class="section">
+        <h2>7. CSS Backgrounds</h2>
+        <p>Backgrounds enhance visual appeal with properties like <code>background-color</code>, <code>background-image</code>, <code>background-repeat</code>, <code>background-position</code>, and <code>background-size</code>.</p>
+        <p><strong>Properties:</strong></p>
+        <ul>
+          <li><code>background-color</code>: Solid color or gradient.</li>
+          <li><code>background-image</code>: Image or gradient.</li>
+          <li><code>background-repeat</code>: Controls tiling (repeat, no-repeat).</li>
+          <li><code>background-size</code>: Scales image (cover, contain).</li>
+        </ul>
+        <h3>Example 1: Complex background with image and fallback color</h3>
+        <pre class="language-css">
+body {
+  background-color: #e7f3e7;
+  background-image: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+        </pre>
+        <div class="result">
+          <div style="background-color: #e7f3e7; background-image: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg'); background-repeat: no-repeat; background-position: center; background-size: cover; height: 400px; width: 100%; color: white;">Sample Background</div>
+        </div>
+        <h3>Example 2: Using gradients</h3>
+        <pre class="language-css">
+button {
+  background: linear-gradient(to right, #34C759, #2a9d4a);
+  color: white;
+  padding: 10px;
+}
+        </pre>
+        <div class="result">
+          <button style="background: linear-gradient(to right, #34C759, #2a9d4a); color: white; padding: 10px; border: none;">Gradient Button</button>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Backgrounds are used in hero sections of websites to create visually appealing banners with images and overlays.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use <code>background-attachment: fixed;</code> for parallax effects, but avoid on mobile devices due to performance issues. Optimize images with WebP or compression tools like TinyPNG.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 8: CSS Borders -->
+    <div class="lab-section" id="section8">
+      <div class="section">
+        <h2>8. CSS Borders</h2>
+        <p>Borders frame elements with <code>border-width</code>, <code>border-style</code>, and <code>border-color</code>. <code>border-radius</code> adds rounded corners for modern designs.</p>
+        <p><strong>Border Styles:</strong> solid, dashed, dotted, double, etc.</p>
+        <h3>Example 1: Styled border with rounded corners</h3>
+        <pre class="language-css">
+div {
+  border: 3px dashed #34C759;
+  border-radius: 15px;
+  padding: 10px;
+}
+        </pre>
+        <div class="result">
+          <div style="border: 3px dashed #34C759; border-radius: 15px; padding: 10px;">Sample Box</div>
+        </div>
+        <h3>Example 2: Using <code>border-image</code> for custom borders</h3>
+        <pre class="language-css">
+div {
+  border: 10px solid transparent;
+  border-image: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg') 30 stretch;
+}
+        </pre>
+        <div class="result">
+          <div style="border: 10px solid #34C759; padding: 10px;">Sample Image Border (Simulated)</div>
+          <p><em>Note: <code>border-image</code> requires a stylesheet and compatible image.</em></p>
+        </div>
+        <p><strong>Accessibility Tip:</strong> Ensure borders have sufficient contrast for visibility, especially for focus states.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use <code>border-radius: 50%</code> for circular elements like profile avatars.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 9: CSS Margins -->
+    <div class="lab-section" id="section9">
+      <div class="section">
+        <h2>9. CSS Margins</h2>
+        <p>Margins create space outside an element’s border, controlling layout spacing. Shorthand syntax: <code>margin: top right bottom left;</code>.</p>
+        <p><strong>Margin Collapsing:</strong> Vertical margins between adjacent elements may combine, taking the larger value.</p>
+        <h3>Example 1: Applying margins for spacing</h3>
+        <pre class="language-css">
+p {
+  margin: 15px 25px;
+  border: 1px solid #34C759;
+}
+        </pre>
+        <div class="result">
+          <p style="margin: 15px 25px; border: 1px solid #34C759;">Text with Margins</p>
+        </div>
+        <h3>Example 2: Centering with auto margins</h3>
+        <pre class="language-css">
+div {
+  width: 50%;
+  margin: 20px auto;
+  background-color: #e7f3e7;
+}
+        </pre>
+        <div class="result">
+          <div style="width: 50%; margin: 20px auto; background-color: #e7f3e7; padding: 10px;">Centered Box</div>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Margins are used in card layouts to space out content blocks in blogs or dashboards.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use negative margins cautiously to overlap elements, but prefer transforms for positioning.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 10: CSS Padding -->
+    <div class="lab-section" id="section10">
+      <div class="section">
+        <h2>10. CSS Padding</h2>
+        <p>Padding adds space inside an element, between content and border. Unlike margins, padding does not collapse.</p>
+        <p><strong>Shorthand:</strong> <code>padding: top right bottom left;</code></p>
+        <h3>Example 1: Adding padding for content spacing</h3>
+        <pre class="language-css">
+p {
+  padding: 20px 30px;
+  border: 1px solid #34C759;
+  background-color: #f8f9fa;
+}
+        </pre>
+        <div class="result">
+          <p style="padding: 20px 30px; border: 1px solid #34C759; background-color: #f8f9fa;">Text with Padding</p>
+        </div>
+        <h3>Example 2: Uneven padding for design</h3>
+        <pre class="language-css">
+button {
+  padding: 10px 20px 10px 40px;
+  background-color: #34C759;
+  color: white;
+}
+        </pre>
+        <div class="result">
+          <button style="padding: 10px 20px 10px 40px; background-color: #34C759; color: white; border: none;">Asymmetric Button</button>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Padding is used in buttons to ensure comfortable click areas, improving usability.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Combine padding with <code>box-sizing: border-box;</code> to prevent unexpected size increases.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 11: CSS Height/Width -->
+    <div class="lab-section" id="section11">
+      <div class="section">
+        <h2>11. CSS Height/Width</h2>
+        <p>Control element dimensions with <code>height</code>, <code>width</code>, <code>min-height</code>, <code>max-width</code>, etc., using units like <code>px</code>, <code>%</code>, <code>vw</code>, or <code>rem</code>.</p>
+        <p><strong>Units:</strong></p>
+        <ul>
+          <li><code>px</code>: Fixed pixels.</li>
+          <li><code>%</code>: Relative to parent.</li>
+          <li><code>vw/vh</code>: Viewport width/height.</li>
+          <li><code>rem/em</code>: Relative to root/element font size.</li>
+        </ul>
+        <h3>Example 1: Setting responsive dimensions</h3>
+        <pre class="language-css">
+div {
+  width: 60%;
+  height: 150px;
+  max-width: 500px;
+  min-height: 100px;
+  background-color: #e7f3e7;
+}
+        </pre>
+        <div class="result">
+          <div style="width: 60%; height: 150px; max-width: 500px; min-height: 100px; background-color: #e7f3e7;">Responsive Box</div>
+        </div>
+        <h3>Example 2: Using viewport units</h3>
+        <pre class="language-css">
+section {
+  height: 50vh;
+  width: 80vw;
+  background-color: #f8f9fa;
+}
+        </pre>
+        <div class="result">
+          <section style="height: 50vh; width: 80vw; background-color: #f8f9fa;">Viewport-Sized Section</section>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Width and height are used in responsive image galleries to ensure consistent thumbnail sizes.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use <code>min-height</code> for containers to prevent content clipping on dynamic pages.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 12: The CSS Box Model -->
+    <div class="lab-section" id="section12">
+      <div class="section">
+        <h2>12. The CSS Box Model</h2>
+        <p>The box model defines an element’s structure: content, padding, border, and margin. <code>box-sizing: border-box;</code> includes padding and border in the specified width/height.</p>
+        <p><strong>Components:</strong></p>
+        <ul>
+          <li><strong>Content</strong>: The inner content (text, images).</li>
+          <li><strong>Padding</strong>: Space inside the border.</li>
+          <li><strong>Border</strong>: Surrounds padding.</li>
+          <li><strong>Margin</strong>: Space outside the border.</li>
+        </ul>
+        <h3>Example 1: Applying the box model</h3>
+        <pre class="language-css">
+* {
+  box-sizing: border-box;
+}
+div {
+  width: 300px;
+  padding: 15px;
+  border: 5px solid #34C759;
+  margin: 20px;
+  background-color: #e7f3e7;
+}
+        </pre>
+        <div class="result">
+          <div style="width: 300px; padding: 15px; border: 5px solid #34C759; margin: 20px; background-color: #e7f3e7; box-sizing: border-box;">Box Model Example</div>
+        </div>
+        <h3>Example 2: Visualizing the box model with outlines</h3>
+        <pre class="language-css">
+div {
+  width: 200px;
+  padding: 10px;
+  border: 3px solid #34C759;
+  margin: 15px;
+  outline: 2px dashed red;
+  outline-offset: 5px;
+}
+        </pre>
+        <div class="result">
+          <div style="width: 200px; padding: 10px; border: 3px solid #34C759; margin: 15px; outline: 2px dashed red; outline-offset: 5px;">Box with Outline</div>
+        </div>
+        <p><strong>Real-World Use Case:</strong> The box model is critical in form design, ensuring inputs have consistent padding and borders for usability.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Apply <code>box-sizing: border-box;</code> globally to simplify sizing calculations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 13: CSS Outline -->
+    <div class="lab-section" id="section13">
+      <div class="section">
+        <h2>13. CSS Outline</h2>
+        <p>Outlines are drawn outside borders, don’t affect layout, and are useful for focus states or debugging. Properties include <code>outline-style</code>, <code>outline-width</code>, and <code>outline-color</code>.</p>
+        <h3>Example 1: Adding an outline for focus</h3>
+        <pre class="language-css">
+button {
+  outline: 2px dashed #34C759;
+  outline-offset: 3px;
+  padding: 10px;
+}
+        </pre>
+        <div class="result">
+          <button style="outline: 2px dashed #34C759; outline-offset: 3px; padding: 10px;">Outlined Button</button>
+        </div>
+        <h3>Example 2: Custom focus outline for accessibility</h3>
+        <pre class="language-css">
+input:focus {
+  outline: 3px solid #34C759;
+  outline-offset: 2px;
+}
+        </pre>
+        <div class="result">
+          <style>
+            .focus-input:focus {
+              outline: 3px solid #34C759;
+              outline-offset: 2px;
+            }
+          </style>
+          <input type="text" class="focus-input" style="padding: 5px;" placeholder="Focus Me">
+          <p><em>Tab to the input to see the focus outline.</em></p>
+        </div>
+        <p><strong>Accessibility Tip:</strong> Ensure outlines are visible for keyboard users to maintain navigability. Use at least 2px thickness for visibility.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use outlines instead of borders for temporary debugging to avoid layout shifts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 14: CSS Text -->
+    <div class="lab-section" id="section14">
+      <div class="section">
+        <h2>14. CSS Text</h2>
+        <p>Text properties like <code>text-align</code>, <code>text-decoration</code>, <code>text-transform</code>, and <code>text-shadow</code> control typography and readability.</p>
+        <p><strong>Properties:</strong></p>
+        <ul>
+          <li><code>text-align</code>: Left, right, center, justify.</li>
+          <li><code>text-decoration</code>: Underline, overline, line-through.</li>
+          <li><code>text-transform</code>: Uppercase, lowercase, capitalize.</li>
+          <li><code>text-shadow</code>: Adds shadow effects.</li>
+        </ul>
+        <h3>Example 1: Styling text for emphasis</h3>
+        <pre class="language-css">
+p {
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-decoration: underline;
+}
+        </pre>
+        <div class="result">
+          <p style="text-align: center; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); text-decoration: underline;">Styled Text</p>
+        </div>
+        <h3>Example 2: Creating a neon text effect</h3>
+        <pre class="language-css">
+h1 {
+  text-shadow: 0 0 5px #34C759, 0 0 10px #34C759, 0 0 15px #34C759;
+  color: white;
+}
+        </pre>
+        <div class="result">
+          <h1 style="text-shadow: 0 0 5px #34C759, 0 0 10px #34C759, 0 0 15px #34C759; color: white; background-color: #333;">Neon Heading</h1>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Text styling is used in marketing websites to highlight calls-to-action with bold, shadowed text.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use <code>line-height</code> with text properties to improve readability, especially for long paragraphs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 15: CSS Fonts -->
+    <div class="lab-section" id="section15">
+      <div class="section">
+        <h2>15. CSS Fonts</h2>
+        <p>Fonts define text appearance with <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, and <code>font-style</code>. Web-safe fonts or external services like Google Fonts ensure compatibility.</p>
+        <h3>Example 1: Using a web-safe font stack</h3>
+        <pre class="language-css">
+p {
+  font-family: "Arial", Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  font-style: italic;
+}
+        </pre>
+        <div class="result">
+          <p style="font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 600; font-style: italic;">Styled Text</p>
+        </div>
+        <h3>Example 2: Importing Google Fonts</h3>
+        <pre class="language-css">
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+        </pre>
+        <div class="result">
+          <h1 style="font-family: Roboto, sans-serif; font-weight: 700;">Google Font Heading</h1>
+          <p><em>Note: Requires internet for Google Fonts.</em></p>
+        </div>
+        <p><strong>Accessibility Tip:</strong> Use relative units (<code>rem</code>, <code>em</code>) for font sizes to respect user settings.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Always provide fallback fonts in <code>font-family</code> to handle cases where primary fonts fail to load.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 16: CSS Icons -->
+    <div class="lab-section" id="section16">
+      <div class="section">
+        <h2>16. CSS Icons</h2>
+        <p>Icons enhance UI with scalable vector graphics (SVG) or font-based icons like Font Awesome. They’re lightweight and customizable.</p>
+        <h3>Example 1: Using Font Awesome icons</h3>
+        <pre class="language-html">
+<!-- Add Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<i class="fas fa-star" style="font-size: 24px; color: #34C759;"></i>
+<i class="fas fa-heart" style="font-size: 24px; color: red;"></i>
+        </pre>
+        <div class="result">
+          <i class="fas fa-star" style="font-size: 24px; color: #34C759;"></i>
+          <i class="fas fa-heart" style="font-size: 24px; color: red;"></i>
+        </div>
+        <h3>Example 2: Animating icons on hover</h3>
+        <pre class="language-css">
+.icon:hover {
+  transform: rotate(360deg);
+  transition: transform 0.5s ease;
+}
+        </pre>
+        <div class="result">
+          <style>
+            .icon:hover {
+              transform: rotate(360deg);
+              transition: transform 0.5s ease;
+            }
+          </style>
+          <i class="fas fa-star icon" style="font-size: 24px; color: #34C759;"></i>
+          <p><em>Hover over the star to see the rotation.</em></p>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Icons are used in navigation menus to visually represent actions like “home” or “settings.”</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use SVG icons for better performance and scalability compared to image-based icons.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 17: CSS Links -->
+    <div class="lab-section" id="section17">
+      <div class="section">
+        <h2>17. CSS Links</h2>
+        <p>Links are styled with pseudo-classes (<code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code>) to provide visual feedback.</p>
+        <h3>Example 1: Styling link states</h3>
+        <pre class="language-css">
+a:link {
+  color: #34C759;
+  text-decoration: none;
+}
+a:visited {
+  color: purple;
+}
+a:hover {
+  color: #2a9d4a;
+  text-decoration: underline;
+}
+a:active {
+  color: red;
+}
+        </pre>
+        <div class="result">
+          <style>
+            .styled-link:link {
+              color: #34C759;
+              text-decoration: none;
+            }
+            .styled-link:visited {
+              color: purple;
+            }
+            .styled-link:hover {
+              color: #2a9d4a;
+              text-decoration: underline;
+            }
+            .styled-link:active {
+              color: red;
+            }
+          </style>
+          <a href="#" class="styled-link">Styled Link</a>
+          <p><em>Test in a browser to see hover and active states.</em></p>
+        </div>
+        <h3>Example 2: Adding transitions for smooth effects</h3>
+        <pre class="language-css">
+a {
+  color: #34C759;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+a:hover {
+  color: #2a9d4a;
+  transform: scale(1.1);
+}
+        </pre>
+        <div class="result">
+          <style>
+            .hover-link {
+              color: #34C759;
+              transition: color 0.3s ease, transform 0.3s ease;
+            }
+            .hover-link:hover {
+              color: #2a9d4a;
+              transform: scale(1.1);
+            }
+          </style>
+          <a href="#" class="hover-link">Hover Link</a>
+          <p><em>Hover to see the scaling effect.</em></p>
+        </div>
+        <p><strong>Accessibility Tip:</strong> Ensure links have clear focus styles for keyboard navigation.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Follow the LVHA order (Link-Visited-Hover-Active) to avoid style conflicts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 18: CSS Lists -->
+    <div class="lab-section" id="section18">
+      <div class="section">
+        <h2>18. CSS Lists</h2>
+        <p>Lists (<code>ul</code> for unordered, <code>ol</code> for ordered) can be styled using CSS to change their markers, such as bullets or numbers, with properties like <code>list-style-type</code>, <code>list-style-image</code>, and <code>list-style-position</code>.</p>
+        <h3>Example 1: Customizing an Unordered List</h3>
+        <p>This example uses <code>list-style-type</code> to set circle bullets and <code>list-style-position: inside</code> to align bullets with the text.</p>
+        <pre class="language-css">
+ul {
+  list-style-type: circle;
+  list-style-position: inside;
+}
+li {
+  padding: 5px;
+}
+        </pre>
+        <div class="result">
+          <ul style="list-style-type: circle; list-style-position: inside;">
+            <li style="padding: 5px;">Item 1</li>
+            <li style="padding: 5px;">Item 2</li>
+          </ul>
+        </div>
+        <h3>Example 2: Using a Custom Image for List Markers</h3>
+        <p>Use <code>list-style-image</code> with a small image (e.g., 16x16 pixels) for clear display. Set a fallback with <code>list-style-type</code> if the image fails to load.</p>
+        <pre class="language-css">
+ul {
+  list-style-image: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg');
+  list-style-type: square; /* Fallback */
+  list-style-position: outside;
+  padding-left: 25px;
+}
+li {
+  padding: 5px 0;
+}
+        </pre>
+        <div class="result">
+          <ul style="list-style-image: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg'); list-style-type: square; list-style-position: outside; padding-left: 25px;">
+            <li style="padding: 5px 0;">Custom Item 1</li>
+            <li style="padding: 5px 0;">Custom Item 2</li>
+          </ul>
+          <p><em>Note: Use small, square images for best results. Large images may look misaligned.</em></p>
+        </div>
+        <h3>Example 3: Using a Background Image</h3>
+        <p>For more control over bullet size and position, use a background image instead of <code>list-style-image</code>.</p>
+        <pre class="language-css">
+ul {
+  list-style: none;
+  padding-left: 25px;
+}
+li {
+  padding: 5px 0 5px 20px;
+  background: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg') no-repeat left 5px;
+  background-size: 16px 16px;
+}
+        </pre>
+        <div class="result">
+          <ul style="list-style: none; padding-left: 25px;">
+            <li style="padding: 5px 0 5px 20px; background: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg') no-repeat left 5px; background-size: 16px 16px;">Custom Item 1</li>
+            <li style="padding: 5px 0 5px 20px; background: url('https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg') no-repeat left 5px; background-size: 16px 16px;">Custom Item 2</li>
+          </ul>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Styled lists are used in website navigation menus, feature lists on product pages, or to highlight key points.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> For custom numbering in ordered lists (<code>ol</code>), try CSS counters with <code>counter-increment</code> and <code>content</code>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 19: CSS Tables -->
+    <div class="lab-section" id="section19">
+      <div class="section">
+        <h2>19. CSS Tables</h2>
+        <p>Tables are styled with properties like <code>border</code>, <code>border-collapse</code>, <code>padding</code>, and <code>table-layout</code> for data presentation.</p>
+        <h3>Example 1: A styled table</h3>
+        <pre class="language-css">
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  border: 1px solid #34C759;
+  padding: 10px;
+  text-align: left;
+}
+th {
+  background-color: #e7f3e7;
+}
+        </pre>
+        <div class="result">
+          <table style="border-collapse: collapse; width: 100%;">
+            <tr><th style="border: 1px solid #34C759; padding: 10px; text-align: left; background-color: #e7f3e7;">Name</th><th style="border: 1px solid #34C759; padding: 10px; text-align: left; background-color: #e7f3e7;">Age</th></tr>
+            <tr><td style="border: 1px solid #34C759; padding: 10px; text-align: left;">John</td><td style="border: 1px solid #34C759; padding: 10px; text-align: left;">25</td></tr>
+          </table>
+        </div>
+        <h3>Example 2: Hover effects for rows</h3>
+        <pre class="language-css">
+tr:hover {
+  background-color: #f1f1f1;
+}
+        </pre>
+        <div class="result">
+          <style>
+            .hover-table tr:hover {
+              background-color: #f1f1f1;
+            }
+          </style>
+          <table class="hover-table" style="border-collapse: collapse; width: 100%;">
+            <tr><td style="border: 1px solid #34C759; padding: 10px;">Row 1</td></tr>
+            <tr><td style="border: 1px solid #34C759; padding: 10px;">Row 2</td></tr>
+          </table>
+          <p><em>Hover over rows to see the effect.</em></p>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Tables are used in dashboards to display data like sales reports or user lists.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use <code>table-layout: fixed;</code> for predictable column widths in large datasets.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 20: CSS Display -->
+    <div class="lab-section" id="section20">
+      <div class="section">
+        <h2>20. CSS Display</h2>
+        <p>The <code>display</code> property controls element rendering: <code>block</code>, <code>inline</code>, <code>inline-block</code>, <code>flex</code>, <code>grid</code>, or <code>none</code>.</p>
+        <h3>Example 1: Changing display types</h3>
+        <pre class="language-css">
+span {
+  display: block;
+  background-color: #e7f3e7;
+}
+div {
+  display: inline-block;
+  width: 100px;
+  background-color: #f8f9fa;
+}
+        </pre>
+        <div class="result">
+          <span style="display: block; background-color: #e7f3e7;">Block Span</span>
+          <div style="display: inline-block; width: 100px; background-color: #f8f9fa;">Inline-Block Div</div>
+          <div style="display: inline-block; width: 100px; background-color: #f8f9fa;">Another Div</div>
+        </div>
+        <h3>Example 2: Hiding elements</h3>
+        <pre class="language-css">
+.hidden {
+  display: none;
+}
+        </pre>
+        <div class="result">
+          <p class="hidden" style="display: none;">Hidden Text</p>
+          <p>Visible Text</p>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Display properties are used in responsive menus to switch between block and flex layouts.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use <code>display: contents;</code> to remove an element’s box while keeping its children in the layout.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 21: CSS Max-width -->
+    <div class="lab-section" id="section21">
+      <div class="section">
+        <h2>21. CSS Max-width</h2>
+        <p><code>max-width</code> ensures elements don’t exceed a specified width, enhancing responsiveness. Common units: <code>px</code>, <code>%</code>, <code>vw</code>.</p>
+        <h3>Example 1: Responsive image</h3>
+        <pre class="language-css">
+img {
+  max-width: 100%;
+  height: auto;
+}
+        </pre>
+        <div class="result">
+          <img src="https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg" alt="Sample image for max-width demonstration" style="max-width: 100%; height: auto;">
+        </div>
+        <h3>Example 2: Centered container with max-width</h3>
+        <pre class="language-css">
+div {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #e7f3e7;
+}
+        </pre>
+        <div class="result">
+          <div style="max-width: 800px; margin: 0 auto; background-color: #e7f3e7; padding: 10px;">Centered Container</div>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Max-width is used in article layouts to keep text readable on wide screens.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Pair <code>max-width</code> with <code>min-width</code> for flexible, responsive designs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 22: CSS Position -->
+    <div class="lab-section" id="section22">
+      <div class="section">
+        <h2>22. CSS Position</h2>
+        <p>Positioning controls element placement: <code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code>, or <code>sticky</code>.</p>
+        <h3>Example 1: Sticky header</h3>
+        <pre class="language-css">
+header {
+  position: sticky;
+  top: 0;
+  background-color: #34C759;
+  color: white;
+  padding: 10px;
+}
+        </pre>
+        <div class="result" style="height: 400px; overflow-y: auto; border: 1px solid #000;">
+          <header style="position: sticky; top: 0; background-color: #34C759; color: white; padding: 10px;">Sticky Header</header>
+          <p>Scroll to see the sticky effect. This is a long text to demonstrate scrolling. This is a long text to demonstrate scrolling. This is a long text to demonstrate scrolling.</p>
+        </div>
+        <h3>Example 2: Absolute positioning for tooltips</h3>
+        <pre class="language-css">
+.tooltip {
+  position: relative;
+}
+.tooltip:hover::after {
+  content: 'Tooltip';
+  position: absolute;
+  top: -30px;
+  background-color: #333;
+  color: white;
+  padding: 5px;
+}
+        </pre>
+        <div class="result">
+          <style>
+            .tooltip {
+              position: relative;
+            }
+            .tooltip:hover::after {
+              content: 'Tooltip';
+              position: absolute;
+              top: -30px;
+              background-color: #333;
+              color: white;
+              padding: 5px;
+              border-radius: 3px;
+            }
+          </style>
+          <span class="tooltip">Hover Me</span>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Fixed positioning is used for floating action buttons in mobile apps.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use <code>z-index</code> with positioning to control stacking order.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 23: CSS Z-index -->
+    <div class="lab-section" id="section23">
+      <div class="section">
+        <h2>23. CSS Z-index</h2>
+        <p><code>z-index</code> controls the stacking order of positioned elements. Higher values place elements on top.</p>
+        <h3>Example 1: Overlapping elements</h3>
+        <pre class="language-css">
+.top {
+  position: absolute;
+  z-index: 100;
+  background-color: #34C759;
+}
+.bottom {
+  position: absolute;
+  z-index: 50;
+  background-color: #e7f3e7;
+}
+        </pre>
+        <div class="result" style="position: relative; height: 100px;">
+          <div class="top" style="position: absolute; z-index: 100; background-color: #34C759; padding: 10px; top: 0; left: 0;">Top Layer</div>
+          <div class="bottom" style="position: absolute; z-index: 50; background-color: #e7f3e7; padding: 10px; top: 20px; left: 20px;">Bottom Layer</div>
+        </div>
+        <h3>Example 2: Modal overlay</h3>
+        <pre class="language-css">
+.modal {
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+}
+        </pre>
+        <div class="result">
+          <div style="position: relative; background-color: rgba(0, 0, 0, 0.8); padding: 10px; color: white;">Modal Overlay (Simulated)</div>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Z-index is used in dropdown menus to ensure they appear above other content.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Avoid excessively high <code>z-index</code> values; use increments like 10, 20, etc., for clarity.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 24: CSS Overflow -->
+    <div class="lab-section" id="section24">
+      <div class="section">
+        <h2>24. CSS Overflow</h2>
+        <p><code>overflow</code> manages content that exceeds an element’s dimensions: <code>visible</code>, <code>hidden</code>, <code>scroll</code>, or <code>auto</code>.</p>
+        <h3>Example 1: Scrollable container</h3>
+        <pre class="language-css">
+div {
+  overflow: auto;
+  height: 100px;
+  width: 200px;
+  border: 1px solid #34C759;
+}
+        </pre>
+        <div class="result">
+          <div style="overflow: auto; height: 100px; width: 200px; border: 1px solid #34C759;">This is a long text to demonstrate overflow. This is a long text to demonstrate overflow. This is a long text to demonstrate overflow.</div>
+        </div>
+        <h3>Example 2: Hidden overflow for image cropping</h3>
+        <pre class="language-css">
+.image-container {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+img {
+  width: 100%;
+}
+        </pre>
+        <div class="result">
+          <div class="image-container" style="width: 150px; height: 150px; overflow: hidden;">
+            <img src="https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg" alt="Sample image for overflow demonstration" style="width: 100%;">
+          </div>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Overflow is used in chat windows to create scrollable message areas.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use <code>overflow-x</code> or <code>overflow-y</code> for axis-specific control.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 25: CSS Float -->
+    <div class="lab-section" id="section25">
+      <div class="section">
+        <h2>25. CSS Float</h2>
+        <p><code>float</code> positions elements left or right, allowing content to wrap around. <code>clear</code> prevents wrapping on specified sides.</p>
+        <h3>Example 1: Floating an image</h3>
+        <pre class="language-css">
+img {
+  float: left;
+  margin-right: 15px;
+  width: 100px;
+}
+.clearfix {
+  clear: both;
+}
+        </pre>
+        <div class="result" style="border: 1px solid #34C759;">
+          <img src="https://khoinguonsangtao.vn/wp-content/uploads/2022/10/hinh-anh-chim-bo-cau-trang.jpg" alt="Sample image for float demonstration" style="float: left; margin-right: 15px; width: 100px;">
+          <p>This text wraps around the floated image.</p>
+          <div style="clear: both;"></div>
+        </div>
+        <h3>Example 2: Creating a floated layout</h3>
+        <pre class="language-css">
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+        </pre>
+        <div class="result" style="overflow: hidden;">
+          <div style="float: left; width: 33.33%; padding: 10px; background-color: #e7f3e7;">Column 1</div>
+          <div style="float: left; width: 33.33%; padding: 10px; background-color: #f8f9fa;">Column 2</div>
+          <div style="float: left; width: 33.33%; padding: 10px; background-color: #e7f3e7;">Column 3</div>
+        </div>
+        <p><strong>Real-World Use Case:</strong> Floats were historically used for magazine-style layouts, though Flexbox/Grid are now preferred.</p>
+        <div class="note">
+          <p><strong>Tip:</strong> Use <code>overflow: hidden;</code> on parent containers to clear floats without extra markup.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 26: CSS Cascade and Specificity -->
+<div class="lab-section" id="section26">
+  <div class="section">
+    <h2>26. CSS Cascade and Specificity</h2>
+    <p>The cascade determines which styles apply when rules conflict, based on <code>!important</code>, specificity, and source order.</p>
+    <p><strong>Specificity Hierarchy:</strong></p>
+    <ul>
+      <li>Inline styles</li>
+      <li>ID selectors</li>
+      <li>Class, attribute, pseudo-class selectors</li>
+      <li>Type selectors</li>
+    </ul>
+    <h3>Example 1: Specificity in action</h3>
+    <pre class="language-css">
+p {
+  color: blue;
+}
+#special {
+  color: green;
+}
+.special {
+  color: red;
+}
+    </pre>
+    <div class="result">
+      <p id="special" class="special" style="color: green;">Text (Green due to ID)</p>
+    </div>
+    <h3>Example 2: Using <code>!important</code></h3>
+    <pre class="language-css">
+p {
+  color: blue !important;
+}
+#special {
+  color: green;
+}
+    </pre>
+    <div class="result">
+      <p id="special" style="color: blue;">Text (Blue due to !important)</p>
+    </div>
+    <p><strong>Real-World Use Case:</strong> Specificity is critical in large CSS frameworks like Bootstrap to override default styles.</p>
+    <div class="note">
+      <p><strong>Tip:</strong> Minimize <code>!important</code> and rely on specificity to keep styles predictable. Use <code>!important</code> only for overriding third-party styles or critical fixes.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 27: Best Practices for Organizing CSS -->
+<div class="lab-section" id="section27">
+  <div class="section">
+    <h2>27. Best Practices for Organizing CSS</h2>
+    <p>Organized CSS improves maintainability. Use methodologies like BEM (Block-Element-Modifier) or SMACSS, consistent formatting, and logical grouping.</p>
+    <h3>Example 1: Organized CSS with BEM</h3>
+    <pre class="language-css">
+/* Header Component */
+.header {
+  background: #34C759;
+}
+.header__title {
+  color: white;
+  font-size: 24px;
+}
+
+/* Button Component */
+.btn {
+  padding: 10px;
+}
+.btn--primary {
+  background-color: #34C759;
+}
+    </pre>
+    <div class="result">
+      <div style="background: #34C759; padding: 10px;">
+        <h1 style="color: white; font-size: 24px;">Header Title</h1>
+      </div>
+      <button style="padding: 10px; background-color: #34C759; color: white;">Primary Button</button>
+    </div>
+    <h3>Example 2: Using CSS modules for scoping</h3>
+    <pre class="language-css">
+:local(.button) {
+  background-color: #34C759;
+}
+    </pre>
+    <div class="result">
+      <button style="background-color: #34C759; padding: 10px; color: white;">Scoped Button</button>
+      <p><em>Note: CSS modules require a build tool like Webpack.</em></p>
+    </div>
+    <p><strong>Real-World Use Case:</strong> Large teams use CSS organization to manage styles for complex applications like social media platforms.</p>
+    <div class="note">
+      <p><strong>Tip:</strong> Use tools like Stylelint to enforce consistent CSS formatting across teams. Consider CSS-in-JS for modern frameworks like React.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 28: Introduction to Responsive Design -->
+<div class="lab-section" id="section28">
+  <div class="section">
+    <h2>28. Introduction to Responsive Design</h2>
+    <p>Responsive design ensures websites adapt to various devices using fluid grids, flexible images, and media queries.</p>
+    <p><strong>Techniques:</strong></p>
+    <ul>
+      <li><strong>Fluid Grids</strong>: Use percentages or <code>vw</code>.</li>
+      <li><strong>Flexible Images</strong>: <code>max-width: 100%</code>.</li>
+      <li><strong>Media Queries</strong>: Apply styles based on viewport size.</li>
+    </ul>
+    <h3>Example 1: Responsive layout with media queries</h3>
+    <pre class="language-css">
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+}
+.container {
+  display: flex;
+  gap: 10px;
+}
+    </pre>
+    <div class="result">
+      <style>
+        .responsive-container {
+          display: flex;
+          gap: 10px;
+        }
+        @media (max-width: 768px) {
+          .responsive-container {
+            flex-direction: column;
+          }
+        }
+      </style>
+      <div class="responsive-container" style="display: flex; gap: 10px;">
+        <div style="background-color: #e7f3e7; padding: 10px;">Item 1</div>
+        <div style="background-color: #f8f9fa; padding: 10px;">Item 2</div>
+      </div>
+      <p><em>Resize browser to test media query.</em></p>
+    </div>
+    <h3>Example 2: Mobile-first approach</h3>
+    <pre class="language-css">
+.container {
+  font-size: 14px;
+}
+@media (min-width: 600px) {
+  .container {
+    font-size: 16px;
+  }
+}
+    </pre>
+    <div class="result">
+      <div style="font-size: 14px;">Mobile-first Text</div>
+      <p><em>Test with browser resize to see font size change.</em></p>
+    </div>
+    <p><strong>Real-World Use Case:</strong> Responsive design is used in e-commerce sites to ensure usability on desktops, tablets, and phones.</p>
+    <div class="note">
+      <p><strong>Tip:</strong> Adopt a mobile-first approach by writing base styles for small screens and adding media queries for larger screens.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 29: CSS Flexbox -->
+<div class="lab-section" id="section29">
+  <div class="section">
+    <h2>29. CSS Flexbox</h2>
+    <p>Flexbox is a one-dimensional layout system for aligning items in rows or columns, ideal for navigation bars, forms, or card layouts.</p>
+    <p><strong>Key Properties:</strong></p>
+    <ul>
+      <li><code>flex-direction</code>: Row, column, row-reverse.</li>
+      <li><code>flex-wrap</code>: Wrap, nowrap.</li>
+      <li><code>justify-content</code>: Space-between, center, flex-end.</li>
+      <li><code>align-items</code>: Stretch, center, baseline.</li>
+    </ul>
+    <h3>Example 1: Responsive flex layout</h3>
+    <pre class="language-css">
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+}
+.card {
+  flex: 1 1 200px;
+  background-color: #e7f3e7;
+  padding: 15px;
+}
+    </pre>
+    <div class="result">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 15px;">
+        <div style="flex: 1 1 200px; background-color: #e7f3e7; padding: 15px;">Card 1</div>
+        <div style="flex: 1 1 200px; background-color: #e7f3e7; padding: 15px;">Card 2</div>
+        <div style="flex: 1 1 200px; background-color: #e7f3e7; padding: 15px;">Card 3</div>
+      </div>
+    </div>
+    <h3>Example 2: Centered navigation bar</h3>
+    <pre class="language-css">
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+nav a {
+  padding: 10px;
+}
+    </pre>
+    <div class="result">
+      <style>
+        .flex-nav {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+        }
+        .flex-nav a:hover {
+          color: #2a9d4a;
+          text-decoration: underline;
+        }
+      </style>
+      <nav class="flex-nav" style="display: flex; justify-content: center; gap: 20px;">
+        <a href="#" style="padding: 10px; color: #34C759;">Home</a>
+        <a href="#" style="padding: 10px; color: #34C759;">About</a>
+        <a href="#" style="padding: 10px; color: #34C759;">Contact</a>
+      </nav>
+    </div>
+    <p><strong>Real-World Use Case:</strong> Flexbox is used in e-commerce product grids to align items dynamically.</p>
+    <div class="note">
+      <p><strong>Tip:</strong> Use <code>flex-grow</code> and <code>flex-shrink</code> to control how items resize in flexible layouts.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Section 30: CSS Grid -->
+<div class="lab-section" id="section30">
+  <div class="section">
+    <h2>30. CSS Grid</h2>
+    <p>CSS Grid is a two-dimensional layout system for creating complex layouts with rows and columns.</p>
+    <p><strong>Key Properties:</strong></p>
+    <ul>
+      <li><code>grid-template-columns</code>: Defines column sizes.</li>
+      <li><code>grid-template-rows</code>: Defines row sizes.</li>
+      <li><code>grid-gap</code>: Sets spacing between items.</li>
+      <li><code>grid-template-areas</code>: Names areas for placement.</li>
+    </ul>
+    <h3>Example 1: Photo gallery grid</h3>
+    <pre class="language-css">
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+.grid-item {
+  background-color: #e7f3e7;
+  padding: 10px;
+}
+    </pre>
+    <div class="result">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px;">
+        <div style="background-color: #e7f3e7; padding: 10px;">Photo 1</div>
+        <div style="background-color: #e7f3e7; padding: 10px;">Photo 2</div>
+        <div style="background-color: #e7f3e7; padding: 10px;">Photo 3</div>
+        <div style="background-color: #e7f3e7; padding: 10px;">Photo 4</div>
+      </div>
+    </div>
+    <h3>Example 2: Named grid areas</h3>
+    <pre class="language-css">
+.container {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'sidebar content';
+  gap: 10px;
+}
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
+    </pre>
+    <div class="result">
+      <div style="display: grid; grid-template-areas: 'header header' 'sidebar content'; gap: 10px;">
+        <div style="grid-area: header; background-color: #34C759; padding: 10px; color: white;">Header</div>
+        <div style="grid-area: sidebar; background-color: #e7f3e7; padding: 10px;">Sidebar</div>
+        <div style="grid-area: content; background-color: #f8f9fa; padding: 10px;">Content</div>
+      </div>
+    </div>
+    <p><strong>Real-World Use Case:</strong> Grid is used in dashboard layouts to arrange widgets in a structured layout.</p>
+    <div class="note">
+      <p><strong>Tip:</strong> Use <code>auto-fit</code> with <code>minmax</code> for responsive grids without media queries.</p>
+    </div>
+  </div>
+</div>
+
+  </div>
+</body>
+</html>
