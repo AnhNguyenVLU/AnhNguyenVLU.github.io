@@ -118,12 +118,15 @@ const I18N = {
     'teaching.h1': 'Courses, advising & supervision',
     'teaching.lede': 'I teach AI, deep learning, and data analytics at Van Lang University, with a guest appointment at HUIT and VLSC. Below: current term, full course history, and a complete list of student research and thesis projects I supervise.',
 
-    'teaching.current.title': 'Current teaching · 2025–2026',
+    'teaching.current.title': 'Current teaching · Semester 253 · 2025–2026',
     'teaching.vlu.subtitle': 'Van Lang University (VLU)',
     'teaching.huit.subtitle.html': 'University of Industry and Trade (HUIT) <span class="badge muted-badge">Guest</span>',
     'teaching.vlsc.subtitle.html': 'VLSC <span class="badge muted-badge">Guest</span>',
 
     'teaching.history.title': 'Course history',
+    'teaching.sem.252': 'Semester 252 · 2025–2026',
+    'teaching.sem.252.vlu': 'Van Lang University (VLU)',
+    'teaching.sem.252.huit': 'University of Industry and Trade (HUIT)',
     'teaching.sem.251': 'Semester 251 · 2025–2026',
     'teaching.sem.243': 'Semester 243 · 2024–2025',
     'teaching.sem.242': 'Semester 242 · 2024–2025',
@@ -332,12 +335,15 @@ const I18N = {
     'teaching.h1': 'Học phần, cố vấn & hướng dẫn',
     'teaching.lede': 'Tôi giảng dạy AI, học sâu và phân tích dữ liệu tại Đại học Văn Lang, đồng thời thỉnh giảng tại HUIT và VLSC. Bên dưới: học kỳ hiện tại, lịch sử giảng dạy đầy đủ, và toàn bộ danh sách nhóm sinh viên NCKH / khoá luận tôi đang hướng dẫn.',
 
-    'teaching.current.title': 'Đang giảng dạy · 2025–2026',
+    'teaching.current.title': 'Đang giảng dạy · Học kỳ 253 · 2025–2026',
     'teaching.vlu.subtitle': 'Đại học Văn Lang (VLU)',
     'teaching.huit.subtitle.html': 'Đại học Công Thương TP.HCM (HUIT) <span class="badge muted-badge">Thỉnh giảng</span>',
     'teaching.vlsc.subtitle.html': 'VLSC <span class="badge muted-badge">Thỉnh giảng</span>',
 
     'teaching.history.title': 'Lịch sử giảng dạy',
+    'teaching.sem.252': 'Học kỳ 252 · 2025–2026',
+    'teaching.sem.252.vlu': 'Đại học Văn Lang (VLU)',
+    'teaching.sem.252.huit': 'Đại học Công Thương TP.HCM (HUIT)',
     'teaching.sem.251': 'Học kỳ 251 · 2025–2026',
     'teaching.sem.243': 'Học kỳ 243 · 2024–2025',
     'teaching.sem.242': 'Học kỳ 242 · 2024–2025',
