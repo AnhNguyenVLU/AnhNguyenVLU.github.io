@@ -1012,6 +1012,55 @@ strong { font-weight: 600; }
   font-family: var(--font-serif);
 }
 
+/* ---------- Projects & grants ---------- */
+.grant-list { display: grid; gap: var(--s-4); }
+.grant {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: var(--s-5) var(--s-6);
+  box-shadow: var(--shadow-sm);
+}
+.grant-member { border-left-color: var(--line-strong); }
+.grant-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.grant-role {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.grant-member .grant-role { color: var(--muted); }
+.grant-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.grant-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 6px;
+  color: var(--ink);
+  line-height: 1.35;
+  letter-spacing: -.008em;
+}
+.grant-funder {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
 /* ---------- Student cohorts ---------- */
 .cohort { margin: var(--s-6) 0 var(--s-4); }
 .cohort:first-of-type { margin-top: var(--s-4); }
