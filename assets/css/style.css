@@ -1013,7 +1013,7 @@ strong { font-weight: 600; }
 }
 
 /* ---------- Projects & grants ---------- */
-.grant-list { display: grid; gap: var(--s-4); }
+.grant-list { display: grid; gap: var(--s-5); }
 .grant {
   background: var(--bg-card);
   border: 1px solid var(--line);
