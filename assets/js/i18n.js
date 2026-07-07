@@ -117,11 +117,11 @@ const I18N = {
     'grants.title': 'Projects & grants',
     'grants.role.pi': 'Principal Investigator',
     'grants.role.member': 'Member',
-    'grants.funder.vlu': 'Van Lang University (VLU)',
+    'grants.funder.vlu': 'Funded by Van Lang University (VLU)',
     'grants.p1.title': 'UnrollNet: Lightweight, Stable Deep-Unfolding for Large MIMO CSI Feedback',
     'grants.p2.title': 'ACuRe: Adaptive Curvature-Aware Graph Rewiring with Learnable Gating and BIC-Adaptive Partition for Heterophilic Node Classification',
     'grants.p3.title': 'FSS-UBrain: Multi-region Few-Shot Brain Tumor MRI Segmentation',
-    'grants.p3.funder': 'Van Lang University (VLU) · PI: Ngo Hoang Tu',
+    'grants.p3.funder': 'Funded by Van Lang University (VLU) · PI: Ngo Hoang Tu',
 
     // Teaching
     'teaching.eyebrow': 'Teaching',
@@ -344,11 +344,11 @@ const I18N = {
     'grants.title': 'Đề tài & tài trợ',
     'grants.role.pi': 'Chủ nhiệm đề tài',
     'grants.role.member': 'Thành viên',
-    'grants.funder.vlu': 'Trường Đại học Văn Lang (VLU)',
+    'grants.funder.vlu': 'Tài trợ bởi Trường Đại học Văn Lang (VLU)',
     'grants.p1.title': 'UnrollNet: Học trải khai sâu nhẹ và ổn định cho phản hồi CSI trong hệ thống Large MIMO',
     'grants.p2.title': 'ACuRe: Tái cấu trúc đồ thị nhận biết độ cong thích ứng với cơ chế cổng học được và phân hoạch thích ứng dựa trên BIC cho bài toán phân loại nút trên đồ thị dị hợp',
     'grants.p3.title': 'FSS-UBrain: Phân đoạn khối u não đa vùng với học ít mẫu từ ảnh MRI',
-    'grants.p3.funder': 'Trường Đại học Văn Lang (VLU) · Chủ nhiệm: Ngô Hoàng Tú',
+    'grants.p3.funder': 'Tài trợ bởi Trường Đại học Văn Lang (VLU) · Chủ nhiệm: Ngô Hoàng Tú',
 
     // Teaching
     'teaching.eyebrow': 'Giảng dạy',
