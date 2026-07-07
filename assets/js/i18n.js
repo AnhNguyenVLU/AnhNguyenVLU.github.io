@@ -46,7 +46,7 @@ const I18N = {
     'home.fact.email.label': 'Email',
     'home.fact.github.label': 'GitHub',
     'home.fact.scholar.label': 'Scholar',
-    'home.cta.research': 'View research →',
+    'home.cta.research': 'View research',
     'home.cta.cv': 'Download CV',
 
     // Affiliations
@@ -64,7 +64,7 @@ const I18N = {
     'home.metrics.hindex': 'h-index',
     'home.metrics.i10': 'i10-index',
     'home.metrics.note': 'Snapshot — open Google Scholar for the latest.',
-    'home.metrics.cta': 'Open Scholar profile →',
+    'home.metrics.cta': 'Open Scholar profile',
 
     // Home — about
     'home.about.title': 'About',
@@ -101,7 +101,7 @@ const I18N = {
     'research.eyebrow': 'Research',
     'research.h1': 'Publications, projects & theses',
     'research.lede': 'My work spans data science, AI, computer vision, and machine learning applications — with active threads in LiDAR point clouds, recommendation systems, and deep learning models for healthcare and agriculture.',
-    'research.cta.scholar': 'View on Google Scholar →',
+    'research.cta.scholar': 'View on Google Scholar',
     'research.cta.github': 'GitHub',
 
     'research.theses.title': 'Theses',
@@ -111,6 +111,8 @@ const I18N = {
     'research.thesis.bsc.degree': 'Bachelor of Science in Information Technology — Van Lang University, Vietnam.',
 
     'research.pubs.title': 'Selected publications',
+    'research.submitted.title': 'Submitted manuscripts',
+    'research.submitted.intro': 'Manuscripts currently under peer review. (* denotes corresponding author.)',
     'research.collab.title': 'Past research collaborations',
 
     // Teaching
@@ -169,7 +171,7 @@ const I18N = {
     'teaching.material.dl.desc': 'Lecture notebooks, datasets, and assignments.',
     'teaching.material.ml.title': 'Machine Learning',
     'teaching.material.ml.desc': 'Slides & coding exercises for the ML course.',
-    'teaching.cta.github': 'Visit GitHub →',
+    'teaching.cta.github': 'Visit GitHub',
     'badge.honors': 'Honors',
 
     // Books
@@ -263,7 +265,7 @@ const I18N = {
     'home.fact.email.label': 'Email',
     'home.fact.github.label': 'GitHub',
     'home.fact.scholar.label': 'Scholar',
-    'home.cta.research': 'Xem nghiên cứu →',
+    'home.cta.research': 'Xem nghiên cứu',
     'home.cta.cv': 'Tải CV',
 
     // Affiliations
@@ -281,7 +283,7 @@ const I18N = {
     'home.metrics.hindex': 'h-index',
     'home.metrics.i10': 'i10-index',
     'home.metrics.note': 'Số liệu chụp lại — mở Google Scholar để xem mới nhất.',
-    'home.metrics.cta': 'Mở hồ sơ Scholar →',
+    'home.metrics.cta': 'Mở hồ sơ Scholar',
 
     // Home — about
     'home.about.title': 'Giới thiệu',
@@ -318,7 +320,7 @@ const I18N = {
     'research.eyebrow': 'Nghiên cứu',
     'research.h1': 'Công bố, dự án & luận văn',
     'research.lede': 'Công việc của tôi trải dài qua khoa học dữ liệu, AI, thị giác máy tính và các ứng dụng học máy — với các hướng đang triển khai về điểm mây LiDAR, hệ khuyến nghị và mô hình học sâu cho y tế và nông nghiệp.',
-    'research.cta.scholar': 'Xem trên Google Scholar →',
+    'research.cta.scholar': 'Xem trên Google Scholar',
     'research.cta.github': 'GitHub',
 
     'research.theses.title': 'Luận văn',
@@ -328,6 +330,8 @@ const I18N = {
     'research.thesis.bsc.degree': 'Cử nhân Công nghệ Thông tin — Đại học Văn Lang, Việt Nam.',
 
     'research.pubs.title': 'Công bố tiêu biểu',
+    'research.submitted.title': 'Bản thảo đang phản biện',
+    'research.submitted.intro': 'Các bản thảo đang trong quá trình phản biện. (* là tác giả liên hệ.)',
     'research.collab.title': 'Hợp tác nghiên cứu trước đây',
 
     // Teaching
@@ -386,7 +390,7 @@ const I18N = {
     'teaching.material.dl.desc': 'Notebook bài giảng, dữ liệu và bài tập.',
     'teaching.material.ml.title': 'Học máy',
     'teaching.material.ml.desc': 'Slide và bài tập lập trình cho môn ML.',
-    'teaching.cta.github': 'Mở GitHub →',
+    'teaching.cta.github': 'Mở GitHub',
     'badge.honors': 'CTCLC',
 
     // Books
