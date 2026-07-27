@@ -832,6 +832,12 @@ strong { font-weight: 600; }
   border-color: var(--line-strong);
   font-weight: 700;
 }
+.chip-revision {
+  background: var(--brand);
+  color: var(--bg);
+  border-color: var(--brand);
+  font-weight: 700;
+}
 
 @media (max-width: 580px) {
   .pub { padding-left: 34px; }
