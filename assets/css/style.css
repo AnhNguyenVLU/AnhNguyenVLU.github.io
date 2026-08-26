@@ -1057,6 +1057,7 @@ strong, b { font-weight: 650; color: var(--ink); }
 .badge-published { background: var(--brand); border-color: var(--brand); color: #ffffff; }
 .badge-accepted  { background: var(--brand-tint); border-color: var(--brand-line); color: var(--brand-ink); }
 .badge-review    { background: var(--amber-tint); border-color: var(--amber-line); color: var(--amber); }
+.badge-abstract  { background: var(--blue-tint); border-color: var(--blue-line); color: var(--blue); }
 .badge-award     { background: var(--amber-dot); border-color: var(--amber-dot); color: #ffffff; }
 .badge-venue     { background: var(--slate-tint); border-color: var(--slate-line); color: var(--slate); }
 .badge-topic     { background: transparent; border-color: var(--line-strong); color: var(--muted); font-weight: 600; text-transform: none; letter-spacing: .01em; font-size: 11px; }
