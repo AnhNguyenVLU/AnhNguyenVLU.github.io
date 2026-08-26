@@ -5,36 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Books — Nguyen Thai Anh</title>
   <meta name="description" content="Books and writing projects by Nguyen Thai Anh." />
+  <meta name="theme-color" content="#059669" />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">NTA</span>
-        <span class="brand-name">Nguyen Thai Anh</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="site-nav" aria-label="Primary">
-        <a href="index.html" data-i18n="nav.home">Home</a>
-        <a href="research.html" data-i18n="nav.research">Research</a>
-        <a href="teaching.html" data-i18n="nav.teaching">Teaching</a>
-        <a href="mentoring.html" data-i18n="nav.mentoring">Mentoring</a>
-        <a href="books.html" class="active" data-i18n="nav.books">Books</a>
-        <a href="talks-awards.html" data-i18n="nav.talks">Talks &amp; Awards</a>
-        <button class="lang-toggle" data-lang-toggle aria-label="Switch language">VI</button>
-      </nav>
-    </div>
+  <header class="topbar">
+    <button class="drawer-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <span></span><span></span><span></span>
+    </button>
+    <a class="topbar-brand" href="index.html">Nguyen Thai Anh</a>
+    <button class="lang-toggle" data-lang-toggle aria-label="Switch language">VI</button>
   </header>
+  <div class="scrim" data-scrim></div>
 
+  <aside class="sidebar" id="sidebar">
+    <div class="side-inner">
+      <a class="side-id" href="index.html">
+        <span class="side-avatar">
+          <img src="assets/img/profile.jpg" alt="Nguyen Thai Anh"
+               onerror="this.parentElement.classList.add('is-fallback');this.style.display='none';" />
+          <span class="initials">NTA</span>
+        </span>
+        <span class="side-name">Nguyen Thai Anh</span>
+        <span class="side-role" data-i18n="side.role">Lecturer · Van Lang University</span>
+      </a>
+
+      <nav class="side-nav" aria-label="Primary">
+        <a href="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span data-i18n="nav.home">Home</span>
+        </a>
+        <a href="research.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></svg>
+          <span data-i18n="nav.research">Research</span>
+        </a>
+        <a href="teaching.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
+          <span data-i18n="nav.teaching">Teaching</span>
+        </a>
+        <a href="mentoring.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span data-i18n="nav.mentoring">Mentoring</span>
+        </a>
+        <a href="books.html" class="active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+          <span data-i18n="nav.books">Books</span>
+        </a>
+        <a href="talks-awards.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <span data-i18n="nav.talks">Talks &amp; Awards</span>
+        </a>
+      </nav>
+
+      <div class="side-foot">
+        <ul class="side-social" aria-label="Social links">
+          <li><a href="mailto:anh.nt@vlu.edu.vn" aria-label="Email" title="Email">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5Z"/></svg>
+          </a></li>
+          <li><a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3ZM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
+          </a></li>
+          <li><a href="https://github.com/AnhNguyenVLU" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2Z"/></svg>
+          </a></li>
+        </ul>
+        <button class="lang-toggle" data-lang-toggle aria-label="Switch language">VI</button>
+      </div>
+    </div>
+  </aside>
+
+  <div class="shell">
   <main id="main">
     <section class="page-head">
       <div class="container">
@@ -79,6 +125,7 @@
       </div>
     </div>
   </footer>
+  </div>
 
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>

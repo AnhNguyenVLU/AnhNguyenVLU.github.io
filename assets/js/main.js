@@ -1,27 +1,38 @@
 (function () {
-  // Mobile nav toggle
-  const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.site-nav');
-  if (toggle && nav) {
-    const closeNav = function () {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    };
-    toggle.addEventListener('click', function () {
-      const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  const body = document.body;
+  const btn = document.querySelector('.drawer-btn');
+  const sidebar = document.querySelector('.sidebar');
+  const scrim = document.querySelector('.scrim');
+
+  function setDrawer(open) {
+    body.classList.toggle('nav-open', open);
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  if (btn && sidebar) {
+    btn.addEventListener('click', function () {
+      setDrawer(!body.classList.contains('nav-open'));
     });
-    // Close menu when a nav link or the language toggle is used (mobile)
-    nav.querySelectorAll('a, .lang-toggle').forEach(function (el) {
-      el.addEventListener('click', closeNav);
+
+    if (scrim) scrim.addEventListener('click', function () { setDrawer(false); });
+
+    // Any link inside the drawer closes it on mobile
+    sidebar.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setDrawer(false); });
     });
-    // Dismiss the open menu with the Escape key
+
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && nav.classList.contains('open')) {
-        closeNav();
-        toggle.focus();
+      if (e.key === 'Escape' && body.classList.contains('nav-open')) {
+        setDrawer(false);
+        btn.focus();
       }
     });
+
+    // Reset state when the viewport grows back to desktop width
+    const desktop = window.matchMedia('(min-width: 1024px)');
+    const onChange = function (e) { if (e.matches) setDrawer(false); };
+    if (desktop.addEventListener) desktop.addEventListener('change', onChange);
+    else desktop.addListener(onChange);
   }
 
   // Footer year

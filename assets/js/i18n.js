@@ -16,8 +16,62 @@ const I18N = {
     'nav.books': 'Books',
     'nav.talks': 'Talks & Awards',
     'nav.mentoring': 'Mentoring',
+    'side.role': 'Lecturer · Van Lang University',
     'footer.role': 'Faculty of Information Technology · Van Lang University',
     'footer.copy': 'Nguyen Thai Anh.',
+
+    // Home — hero greeting
+    'home.hi': 'Hey there 👋',
+    'home.role': 'Lecturer @ Van Lang University',
+    'home.cta.email': 'Email me',
+
+    // Home — news timeline
+    'home.news.sub': 'Recent publications, appointments and milestones',
+    'news.n1.date': '2026',
+    'news.n1.title': 'Two papers at IEEE Access',
+    'news.n1.a.title': 'Wood–Leaf Separation Review',
+    'news.n1.a.desc': 'Published · vol. 14, pp. 107383–107416',
+    'news.n1.b.title': 'VietJobs-37K & VieJobBERT',
+    'news.n1.b.desc': 'Accepted · Vietnamese occupation classification',
+    'news.n2.date': '2026',
+    'news.n2.title': 'Four conference acceptances',
+    'news.n2.body.html': 'One paper at <strong>MAPR 2026</strong> on heterophily-aware conformal prediction, and three at <strong>ISRSD 2026</strong> covering single-cell clustering, motor-imagery EEG, and on-device plant disease detection.',
+    'news.n3.date': 'Sep 2025',
+    'news.n3.title': 'Guest lectureship at HUIT',
+    'news.n3.body': 'Began teaching Deep Learning and Artificial Intelligence at the University of Industry and Trade.',
+    'news.n4.date': '2025',
+    'news.n4.title': 'Five conference papers accepted',
+    'news.n4.body.html': 'Four papers at <strong>RIVF 2025</strong> and one in a Springer soft-computing volume.',
+    'news.n5.date': 'Jun 2025',
+    'news.n5.title': 'Thesis defense committee',
+    'news.n5.body.html': 'Served as <strong>Secretary of the Graduation Thesis Defense Committee</strong> at VLU.',
+    'news.n6.date': 'Aug 2024',
+    'news.n6.title': 'Guest speaker on AI TECH',
+    'news.n6.body': 'Invited talk on applied AI and deep learning for industry.',
+    'news.n7.date': 'Jul 2024',
+    'news.n7.title': 'Joined Van Lang University',
+    'news.n7.body': 'Appointed lecturer in the Faculty of Information Technology.',
+    'news.n8.date': '2024',
+    'news.n8.title': 'MSc completed at AIT',
+    'news.n8.body': 'Graduated in Data Science and Artificial Intelligence, Asian Institute of Technology, Thailand.',
+
+    // Home — recent publications
+    'home.pubs.title': 'Recent publications',
+    'home.pubs.sub': 'A selection. The full list lives on the research page.',
+    'home.pubs.cta': 'View all publications',
+
+    // Publication badges + cover labels
+    'badge.published': 'Published',
+    'badge.accepted': 'Accepted',
+    'badge.review': 'Under Review',
+    'pub.type.journal': 'Journal Article',
+    'pub.type.conf': 'Conference Paper',
+    'pub.type.review': 'Under Review',
+
+    // Research page stats
+    'research.stat.pubs': 'Publications',
+    'research.stat.review': 'Under review',
+    'research.stat.grants': 'Funded projects',
 
     // Mentoring page
     'mentor.eyebrow': 'Mentoring',
@@ -243,8 +297,62 @@ const I18N = {
     'nav.books': 'Sách',
     'nav.talks': 'Báo cáo & Giải thưởng',
     'nav.mentoring': 'Hướng dẫn',
+    'side.role': 'Giảng viên · Đại học Văn Lang',
     'footer.role': 'Khoa Công nghệ Thông tin · Đại học Văn Lang',
     'footer.copy': 'Nguyễn Thái Anh.',
+
+    // Home — hero greeting
+    'home.hi': 'Xin chào 👋',
+    'home.role': 'Giảng viên @ Đại học Văn Lang',
+    'home.cta.email': 'Gửi email',
+
+    // Home — news timeline
+    'home.news.sub': 'Công bố, bổ nhiệm và cột mốc gần đây',
+    'news.n1.date': '2026',
+    'news.n1.title': 'Hai bài trên IEEE Access',
+    'news.n1.a.title': 'Tổng quan tách gỗ và lá',
+    'news.n1.a.desc': 'Đã xuất bản · tập 14, tr. 107383–107416',
+    'news.n1.b.title': 'VietJobs-37K & VieJobBERT',
+    'news.n1.b.desc': 'Đã chấp nhận · phân loại nghề nghiệp tiếng Việt',
+    'news.n2.date': '2026',
+    'news.n2.title': 'Bốn bài hội nghị được chấp nhận',
+    'news.n2.body.html': 'Một bài tại <strong>MAPR 2026</strong> về conformal prediction nhận biết heterophily, và ba bài tại <strong>ISRSD 2026</strong> về phân cụm đơn bào, EEG vận động tưởng tượng, và phát hiện bệnh cây trên thiết bị biên.',
+    'news.n3.date': '09/2025',
+    'news.n3.title': 'Thỉnh giảng tại HUIT',
+    'news.n3.body': 'Bắt đầu giảng Học sâu và Trí tuệ Nhân tạo tại Đại học Công Thương TP.HCM.',
+    'news.n4.date': '2025',
+    'news.n4.title': 'Năm bài hội nghị được chấp nhận',
+    'news.n4.body.html': 'Bốn bài tại <strong>RIVF 2025</strong> và một bài trong tuyển tập soft computing của Springer.',
+    'news.n5.date': '06/2025',
+    'news.n5.title': 'Hội đồng bảo vệ khoá luận',
+    'news.n5.body.html': 'Đảm nhiệm <strong>Thư ký Hội đồng Bảo vệ Khoá luận tốt nghiệp</strong> tại VLU.',
+    'news.n6.date': '08/2024',
+    'news.n6.title': 'Khách mời chương trình AI TECH',
+    'news.n6.body': 'Báo cáo mời về AI ứng dụng và học sâu trong doanh nghiệp.',
+    'news.n7.date': '07/2024',
+    'news.n7.title': 'Về Đại học Văn Lang',
+    'news.n7.body': 'Được bổ nhiệm giảng viên Khoa Công nghệ Thông tin.',
+    'news.n8.date': '2024',
+    'news.n8.title': 'Hoàn thành Thạc sĩ tại AIT',
+    'news.n8.body': 'Tốt nghiệp ngành Khoa học Dữ liệu và Trí tuệ Nhân tạo, Asian Institute of Technology, Thái Lan.',
+
+    // Home — recent publications
+    'home.pubs.title': 'Công bố gần đây',
+    'home.pubs.sub': 'Một số bài tiêu biểu. Danh mục đầy đủ nằm ở trang Nghiên cứu.',
+    'home.pubs.cta': 'Xem toàn bộ công bố',
+
+    // Publication badges + cover labels
+    'badge.published': 'Đã xuất bản',
+    'badge.accepted': 'Đã chấp nhận',
+    'badge.review': 'Đang phản biện',
+    'pub.type.journal': 'Bài tạp chí',
+    'pub.type.conf': 'Bài hội nghị',
+    'pub.type.review': 'Đang phản biện',
+
+    // Research page stats
+    'research.stat.pubs': 'Công bố',
+    'research.stat.review': 'Đang phản biện',
+    'research.stat.grants': 'Đề tài được tài trợ',
 
     // Mentoring page
     'mentor.eyebrow': 'Hướng dẫn',
