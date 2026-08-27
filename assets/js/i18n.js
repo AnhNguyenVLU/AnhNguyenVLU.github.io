@@ -146,7 +146,7 @@ const I18N = {
     'research.thesis.bsc.degree': 'Bachelor of Science in Information Technology — Van Lang University, Vietnam.',
 
     'research.pubs.title': 'Publications',
-    'research.pubs.legend': 'Bold marks my name, an asterisk the corresponding author. Quartiles are Scimago (SJR) journal rankings for the year shown; a range means the journal sits in different quartiles across its subject categories. Conference venues are not quartile-ranked.',
+    'research.pubs.legend': 'Bold marks my name, an asterisk the corresponding author. Quartiles are Scimago (SJR) journal rankings for the edition year shown. Conference venues are not quartile-ranked.',
     'research.pubs.journals': 'Journal articles',
     'research.pubs.conferences': 'Conference papers',
     'research.submitted.title': 'Submitted manuscripts',
@@ -394,7 +394,7 @@ const I18N = {
     'research.thesis.bsc.degree': 'Cử nhân Công nghệ Thông tin — Đại học Văn Lang, Việt Nam.',
 
     'research.pubs.title': 'Công bố',
-    'research.pubs.legend': 'Chữ in đậm là tên tôi, dấu sao là tác giả liên hệ. Quartile lấy từ bảng xếp hạng tạp chí Scimago (SJR) theo năm ghi kèm; khoảng giá trị nghĩa là tạp chí thuộc các quartile khác nhau ở từng chuyên ngành. Hội nghị không có xếp hạng quartile.',
+    'research.pubs.legend': 'Chữ in đậm là tên tôi, dấu sao là tác giả liên hệ. Quartile lấy từ bảng xếp hạng tạp chí Scimago (SJR), theo năm bản xếp hạng ghi kèm. Hội nghị không có xếp hạng quartile.',
     'research.pubs.journals': 'Bài báo tạp chí',
     'research.pubs.conferences': 'Bài báo hội nghị',
     'research.submitted.title': 'Bản thảo đã nộp',
