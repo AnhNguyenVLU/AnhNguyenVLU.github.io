@@ -13,7 +13,6 @@ const I18N = {
     'nav.home': 'Home',
     'nav.research': 'Research',
     'nav.teaching': 'Teaching',
-    'nav.books': 'Books',
     'nav.talks': 'Talks & Awards',
     'nav.mentoring': 'Mentoring',
     'side.role': 'Lecturer · Van Lang University',
@@ -98,6 +97,12 @@ const I18N = {
     'home.fact.github.label': 'GitHub',
     'home.fact.scholar.label': 'Scholar',
     'home.cta.research': 'View research',
+
+    // Home — citation record
+    'home.metrics.title': 'Citation record',
+    'home.metrics.citations': 'Citations',
+    'home.metrics.hindex': 'h-index',
+    'home.metrics.note.html': 'Google Scholar, August 2026. <a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener">Open the profile</a> for the current figure.',
 
     // Affiliations
     'aff.label': 'Affiliations',
@@ -206,14 +211,6 @@ const I18N = {
     'teaching.cta.github': 'Visit GitHub',
     'badge.honors': 'Honors',
 
-    // Books
-    'books.eyebrow': 'Books',
-    'books.h1': 'Books & writing',
-    'books.lede': 'Books and longer-form writing projects. Updated as titles are released.',
-    'books.placeholder.title': 'Title to be announced',
-    'books.placeholder.meta': 'Publisher · Year',
-    'books.placeholder.desc': 'Short description of the book — topic, audience, and what makes it useful. Replace this placeholder with the real cover image and metadata when available.',
-    'books.contact.html': 'Have a book or chapter to feature here? Email <a href="mailto:anh.nt@vlu.edu.vn">anh.nt@vlu.edu.vn</a>.',
 
     // Talks & Awards
     'talks.eyebrow': 'Talks & Awards',
@@ -264,7 +261,6 @@ const I18N = {
     'nav.home': 'Giới thiệu',
     'nav.research': 'Nghiên cứu',
     'nav.teaching': 'Giảng dạy',
-    'nav.books': 'Sách',
     'nav.talks': 'Báo cáo & Giải thưởng',
     'nav.mentoring': 'Hướng dẫn',
     'side.role': 'Giảng viên · Đại học Văn Lang',
@@ -349,6 +345,12 @@ const I18N = {
     'home.fact.github.label': 'GitHub',
     'home.fact.scholar.label': 'Scholar',
     'home.cta.research': 'Xem nghiên cứu',
+
+    // Home — citation record
+    'home.metrics.title': 'Chỉ số trích dẫn',
+    'home.metrics.citations': 'Trích dẫn',
+    'home.metrics.hindex': 'h-index',
+    'home.metrics.note.html': 'Google Scholar, tháng 8/2026. <a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener">Mở hồ sơ</a> để xem số hiện tại.',
 
     // Affiliations
     'aff.label': 'Đơn vị',
@@ -457,14 +459,6 @@ const I18N = {
     'teaching.cta.github': 'Mở GitHub',
     'badge.honors': 'CTCLC',
 
-    // Books
-    'books.eyebrow': 'Sách',
-    'books.h1': 'Sách & ấn phẩm',
-    'books.lede': 'Các đầu sách và ấn phẩm dài. Cập nhật khi có ấn phẩm mới.',
-    'books.placeholder.title': 'Tựa đề sẽ công bố sau',
-    'books.placeholder.meta': 'Nhà xuất bản · Năm',
-    'books.placeholder.desc': 'Mô tả ngắn về cuốn sách — chủ đề, độc giả mục tiêu, và điểm hữu ích. Thay placeholder này bằng ảnh bìa và thông tin thật khi có.',
-    'books.contact.html': 'Có sách hoặc chương sách muốn xuất hiện ở đây? Liên hệ <a href="mailto:anh.nt@vlu.edu.vn">anh.nt@vlu.edu.vn</a>.',
 
     // Talks & Awards
     'talks.eyebrow': 'Báo cáo & Giải thưởng',
