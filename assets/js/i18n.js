@@ -20,27 +20,25 @@ const I18N = {
     'footer.role': 'Faculty of Information Technology · Van Lang University',
     'footer.copy': 'Nguyen Thai Anh.',
 
-    // Home — hero greeting
-    'home.hi': 'Hey there 👋',
-    'home.role': 'Lecturer @ Van Lang University',
+    // Home — hero
     'home.cta.email': 'Email me',
 
     // Home — news timeline
-    'home.news.sub': 'Recent publications, appointments and milestones',
+    'home.news.sub': 'Appointments, acceptances and milestones',
     'news.n1.date': '2026',
     'news.n1.title': 'Two papers at IEEE Access',
     'news.n1.a.title': 'Wood–Leaf Separation Review',
-    'news.n1.a.desc': 'Published · vol. 14, pp. 107383–107416',
+    'news.n1.a.desc': 'published, vol. 14, pp. 107383–107416',
     'news.n1.b.title': 'VietJobs-37K & VieJobBERT',
-    'news.n1.b.desc': 'Accepted · Vietnamese occupation classification',
+    'news.n1.b.desc': 'accepted, Vietnamese occupation classification',
     'news.n2.date': '2026',
-    'news.n2.title': 'Five conference acceptances',
-    'news.n2.body.html': 'One paper at <strong>MAPR 2026</strong> on heterophily-aware conformal prediction, three at <strong>ISRSD 2026</strong> covering single-cell clustering, motor-imagery EEG and on-device plant disease detection, and one at <strong>SIMC 2026</strong> on Vietnamese spam and toxic comment detection.',
+    'news.n2.title': 'Accepted at MAPR, ISRSD and SIMC',
+    'news.n2.body.html': 'One paper at <strong>MAPR</strong> on heterophily-aware conformal prediction, three at <strong>ISRSD</strong> on single-cell clustering, motor-imagery EEG and on-device plant disease detection, and one at <strong>SIMC</strong> on Vietnamese spam and toxic comment detection.',
     'news.n3.date': 'Sep 2025',
     'news.n3.title': 'Guest lectureship at HUIT',
     'news.n3.body': 'Began teaching Deep Learning and Artificial Intelligence at the University of Industry and Trade.',
     'news.n4.date': '2025',
-    'news.n4.title': 'Five conference papers accepted',
+    'news.n4.title': 'Published at RIVF 2025 and icSoftComp',
     'news.n4.body.html': 'Four papers at <strong>RIVF 2025</strong> and one in a Springer soft-computing volume.',
     'news.n5.date': 'Jun 2025',
     'news.n5.title': 'Thesis defense committee',
@@ -57,18 +55,16 @@ const I18N = {
 
     // Home — recent publications
     'home.pubs.title': 'Recent publications',
-    'home.pubs.sub': 'A selection. The full list lives on the research page.',
+    'home.pubs.sub': 'A selection. The full list is on the research page.',
     'home.pubs.cta': 'View all publications',
 
-    // Publication badges + cover labels
+    // Publication status labels
     'badge.published': 'Published',
     'badge.accepted': 'Accepted',
     'badge.review': 'Under Review',
     'badge.abstract': 'Abstract Accepted',
     'pub.type.journal': 'Journal Article',
     'pub.type.conf': 'Conference Paper',
-    'pub.type.review': 'Under Review',
-    'pub.type.abstract': 'Abstract Accepted',
 
     // Research page stats
     'research.stat.pubs': 'Publications',
@@ -78,15 +74,15 @@ const I18N = {
     // Mentoring page
     'mentor.eyebrow': 'Mentoring',
     'mentor.h1': 'Student supervision & mentoring',
-    'mentor.lede': 'Below are the students I supervise — university-level research projects (NCKH), graduation theses, and external mentees from partner institutions.',
+    'mentor.lede': 'I supervise university-level research groups (NCKH) and graduation theses at Van Lang, many of them jointly with Dr. Ngo Hoang Tu. Eleven further mentees come from HCMUS, HUST, PTIT Hanoi, Vingroup and the University of Sydney.',
     'mentor.nckh.title': 'Research supervision · NCKH (university-level)',
     'mentor.nckh.intro': 'Student research groups conducting university-level scientific research projects (Nghiên cứu Khoa học Cấp trường). Names listed in alphabetical order within each project.',
     'mentor.thesis.title': 'Undergraduate students · Theses',
-    'mentor.thesis.intro': 'Students I advise for graduation thesis (Khoá luận tốt nghiệp), grouped by graduation cohort. Co-supervised entries are advised jointly with Dr. Ngo Hoang Tu.',
+    'mentor.thesis.intro': 'Students I advise for graduation thesis (Khoá luận tốt nghiệp), grouped by graduation cohort.',
+    'mentor.thesis.cosup.legend': '† Co-supervised with Dr. Ngo Hoang Tu.',
     'mentor.thesis.cohort.20242020': '2020 – 2024 · Graduated',
     'mentor.thesis.cohort.20252021': '2021 – 2025 · Graduated',
     'mentor.thesis.cohort.20262022': '2022 – 2026 · In progress',
-    'mentor.thesis.cohort.count.html': '{n} students',
     'mentor.thesis.honor.thesisvale': 'Thesis valedictorian',
     'mentor.thesis.honor.facvale': 'Faculty valedictorian, FIT-VLU 2026',
     'mentor.thesis.cosup': 'Co-supervised w/ Dr. Ngo Hoang Tu',
@@ -95,7 +91,6 @@ const I18N = {
     'mentor.ext.cohort': 'External institutions',
 
     // Home — hero
-    'home.eyebrow': 'Lecturer',
     'home.lede.html': 'Lecturer at the Faculty of Information Technology, <a href="https://www.vlu.edu.vn/" target="_blank" rel="noopener">Van Lang University</a>. MSc in Data Science & AI from <a href="https://ait.ac.th/" target="_blank" rel="noopener">AIT, Thailand</a>.',
     'home.fact.research.label': 'Research',
     'home.fact.research.body': 'Machine Learning · Deep Learning · Computer Vision',
@@ -103,7 +98,6 @@ const I18N = {
     'home.fact.github.label': 'GitHub',
     'home.fact.scholar.label': 'Scholar',
     'home.cta.research': 'View research',
-    'home.cta.cv': 'Download CV',
 
     // Affiliations
     'aff.label': 'Affiliations',
@@ -114,14 +108,6 @@ const I18N = {
     'aff.ait': 'Asian Institute of Technology',
     'aff.ait.role': 'MSc · Thailand · 2024',
 
-    // Home — metrics
-    'home.metrics.title': 'Scholar metrics',
-    'home.metrics.citations': 'Citations',
-    'home.metrics.hindex': 'h-index',
-    'home.metrics.i10': 'i10-index',
-    'home.metrics.note': 'Snapshot — open Google Scholar for the latest.',
-    'home.metrics.cta': 'Open Scholar profile',
-
     // Home — about
     'home.about.title': 'About',
     'home.about.p1': 'I am a lecturer at the Faculty of Information Technology, Van Lang University, and Assistant to the Dean. I earned my BSc in IT from VLU (2018–2022) and my MSc in Data Science and Artificial Intelligence from the Asian Institute of Technology (AIT), Thailand (2022–2024).',
@@ -130,33 +116,21 @@ const I18N = {
     // Home — research interests
     'home.interests.title': 'Research interests',
     'home.interest.cv.tag': 'Computer Vision',
-    'home.interest.cv.desc': 'Object detection, segmentation, LiDAR / point clouds, medical imaging.',
+    'home.interest.cv.desc': 'Object detection, segmentation, LiDAR point clouds, medical imaging.',
     'home.interest.dl.tag': 'Deep Learning',
-    'home.interest.dl.desc': 'CNNs, Vision Transformers, hybrid pruned-residual architectures.',
+    'home.interest.dl.desc': 'CNNs and Vision Transformers, including hybrid Swin and pruned-residual architectures.',
     'home.interest.rec.tag': 'Recommender Systems',
-    'home.interest.rec.desc': 'Image-based recommendation, fusion models for behavior data.',
+    'home.interest.rec.desc': 'Recommendation driven by images rather than ratings.',
     'home.interest.app.tag': 'Applied ML',
     'home.interest.app.desc': 'Healthcare, agriculture, sign language, mobility, networking.',
 
     // Home — news feed
     'home.news.title': 'News',
-    'home.news.1.date': 'Jun 2025',
-    'home.news.1.body.html': 'Served as <strong>Secretary of the Graduation Thesis Defense Committee</strong> at VLU.',
-    'home.news.2.date': '2025',
-    'home.news.2.body.html': 'Five conference papers accepted, including four at <strong>RIVF 2025</strong> and one Springer soft-computing volume.',
-    'home.news.3.date': 'Sep 2025',
-    'home.news.3.body': 'Began guest lectureship at the University of Industry and Trade (HUIT).',
-    'home.news.5.date': 'Aug 2024',
-    'home.news.5.body.html': 'Guest speaker on <strong>AI TECH</strong>.',
-    'home.news.6.date': 'Jul 2024',
-    'home.news.6.body': 'Joined Van Lang University as a lecturer in the Faculty of Information Technology.',
-    'home.news.7.date': '2024',
-    'home.news.7.body': 'Completed MSc in Data Science & AI at AIT, Thailand.',
 
     // Research
     'research.eyebrow': 'Research',
     'research.h1': 'Publications, projects & theses',
-    'research.lede': 'My work spans data science, AI, computer vision, and machine learning applications — with active threads in LiDAR point clouds, recommendation systems, and deep learning models for healthcare and agriculture.',
+    'research.lede': 'I work on computer vision and machine learning, with a broader background in data science and AI. Current threads are LiDAR point clouds, recommendation systems, and deep learning for healthcare and agriculture.',
     'research.cta.scholar': 'View on Google Scholar',
     'research.cta.github': 'GitHub',
 
@@ -166,9 +140,14 @@ const I18N = {
     'research.thesis.bsc.kicker': 'BSc · 2022 · Van Lang University',
     'research.thesis.bsc.degree': 'Bachelor of Science in Information Technology — Van Lang University, Vietnam.',
 
-    'research.pubs.title': 'Selected publications',
+    'research.pubs.title': 'Publications',
+    'research.pubs.legend': 'Bold marks my name. An asterisk marks the corresponding author.',
+    'research.pubs.journals': 'Journal articles',
+    'research.pubs.conferences': 'Conference papers',
     'research.submitted.title': 'Submitted manuscripts',
-    'research.submitted.intro': 'Manuscripts currently under peer review. (* denotes corresponding author.)',
+    'research.submitted.intro': 'Work submitted and not yet published. Bold marks my name, an asterisk the corresponding author.',
+    'research.submitted.review.title': 'Under review',
+    'research.submitted.abstract.title': 'Abstract accepted',
     'research.collab.title': 'Past research collaborations',
     'grants.title': 'Projects & grants',
     'grants.role.pi': 'Principal Investigator',
@@ -182,17 +161,13 @@ const I18N = {
     // Teaching
     'teaching.eyebrow': 'Teaching',
     'teaching.h1': 'Courses, advising & supervision',
-    'teaching.lede': 'I teach AI, deep learning, and data analytics at Van Lang University, with a guest appointment at HUIT and VLSC. Below: current term, full course history, and a complete list of student research and thesis projects I supervise.',
+    'teaching.lede': 'I teach AI, deep learning and data analytics at Van Lang University, with guest teaching at HUIT and previously at VLSC.',
 
     'teaching.current.title': 'Current teaching · Semester 253 · 2025–2026',
     'teaching.vlu.subtitle': 'Van Lang University (VLU)',
-    'teaching.huit.subtitle.html': 'University of Industry and Trade (HUIT) <span class="badge muted-badge">Guest</span>',
-    'teaching.vlsc.subtitle.html': 'VLSC <span class="badge muted-badge">Guest</span>',
 
     'teaching.history.title': 'Course history',
     'teaching.sem.252': 'Semester 252 · 2025–2026',
-    'teaching.sem.252.vlu': 'Van Lang University (VLU)',
-    'teaching.sem.252.huit': 'University of Industry and Trade (HUIT)',
     'teaching.sem.251': 'Semester 251 · 2025–2026',
     'teaching.sem.243': 'Semester 243 · 2024–2025',
     'teaching.sem.242': 'Semester 242 · 2024–2025',
@@ -202,9 +177,6 @@ const I18N = {
     'teaching.advisor.title': 'Academic advisor · 2024–2025',
     'teaching.advisor.body.html': 'Homeroom advisor for four classes: <strong>71K30IT05, 71K30IT06, 71K30IT13</strong> (29 students each cohort) and <strong>72K30IT01</strong> (33 students, Honors program).',
 
-    'teaching.adv.title': 'Research supervision & thesis advising',
-    'teaching.adv.intro': 'Below are student research groups and thesis projects I supervise (NCKH and graduation theses). Names listed in alphabetical order within each project.',
-    'teaching.adv.label.period': 'Period',
     'teaching.adv.label.team': 'Team',
     'teaching.adv.label.coadv': 'Co-advisor',
 
@@ -216,15 +188,11 @@ const I18N = {
     'teaching.adv.p6.title': 'YOLO-Segmentation for Skin Lesion Detection',
     'teaching.adv.p7.title': 'Deep Learning–Enhanced Clustering (UMAP / HDBSCAN) for scRNA-seq Data',
 
-    'teaching.past.title': 'Past research collaborations',
-    'teaching.past.label.role': 'Role',
-    'teaching.past.role.member': 'Team member',
     'teaching.past.1.title': 'Moodle Plugin for Log-File Analysis (Student Learning Effectiveness)',
     'teaching.past.2.title': 'Improving the MetaDistil Framework (NLP)',
 
     'teaching.ext.title': 'External mentees & collaborators',
     'teaching.ext.intro': 'Students from partner institutions and external mentees I supervise or co-supervise outside VLU.',
-    'teaching.ext.placeholder': 'List coming soon — entries will be added once provided.',
 
     'teaching.ta.title': 'Teaching assistant · Jan 2021 – Aug 2022',
     'teaching.ta.body': 'Assisted across six courses:',
@@ -264,7 +232,7 @@ const I18N = {
     'talks.t3.date': '2021',
     'talks.t3.title': 'FAIR 2021 — Conference presentation',
     'talks.t3.venue': 'Vietnam National Conference on Fundamental and Applied IT Research',
-    'talks.t3.desc': 'Presented BSc thesis work — a job recommender system for IT students based on academic performance and industry demand.',
+    'talks.t3.desc': 'Presented my BSc thesis: a job recommender system for IT students based on academic performance and industry demand.',
 
     'awards.title': 'Awards & honors',
     'awards.a1.title': 'Valedictorian recognition',
@@ -303,27 +271,25 @@ const I18N = {
     'footer.role': 'Khoa Công nghệ Thông tin · Đại học Văn Lang',
     'footer.copy': 'Nguyễn Thái Anh.',
 
-    // Home — hero greeting
-    'home.hi': 'Xin chào 👋',
-    'home.role': 'Giảng viên @ Đại học Văn Lang',
+    // Home — hero
     'home.cta.email': 'Gửi email',
 
     // Home — news timeline
-    'home.news.sub': 'Công bố, bổ nhiệm và cột mốc gần đây',
+    'home.news.sub': 'Bổ nhiệm, chấp nhận đăng và cột mốc',
     'news.n1.date': '2026',
     'news.n1.title': 'Hai bài trên IEEE Access',
     'news.n1.a.title': 'Tổng quan tách gỗ và lá',
-    'news.n1.a.desc': 'Đã xuất bản · tập 14, tr. 107383–107416',
+    'news.n1.a.desc': 'đã xuất bản, tập 14, tr. 107383–107416',
     'news.n1.b.title': 'VietJobs-37K & VieJobBERT',
-    'news.n1.b.desc': 'Đã chấp nhận · phân loại nghề nghiệp tiếng Việt',
+    'news.n1.b.desc': 'đã chấp nhận, phân loại nghề nghiệp tiếng Việt',
     'news.n2.date': '2026',
-    'news.n2.title': 'Năm bài hội nghị được chấp nhận',
-    'news.n2.body.html': 'Một bài tại <strong>MAPR 2026</strong> về conformal prediction nhận biết heterophily, ba bài tại <strong>ISRSD 2026</strong> về phân cụm đơn bào, EEG vận động tưởng tượng và phát hiện bệnh cây trên thiết bị biên, cùng một bài tại <strong>SIMC 2026</strong> về phát hiện bình luận spam và độc hại trên mạng xã hội tiếng Việt.',
+    'news.n2.title': 'Được chấp nhận tại MAPR, ISRSD và SIMC',
+    'news.n2.body.html': 'Một bài tại <strong>MAPR</strong> về conformal prediction nhận biết heterophily, ba bài tại <strong>ISRSD</strong> về phân cụm đơn bào, EEG vận động tưởng tượng và phát hiện bệnh cây trên thiết bị biên, cùng một bài tại <strong>SIMC</strong> về phát hiện bình luận spam và độc hại trên mạng xã hội tiếng Việt.',
     'news.n3.date': '09/2025',
     'news.n3.title': 'Thỉnh giảng tại HUIT',
     'news.n3.body': 'Bắt đầu giảng Học sâu và Trí tuệ Nhân tạo tại Đại học Công Thương TP.HCM.',
     'news.n4.date': '2025',
-    'news.n4.title': 'Năm bài hội nghị được chấp nhận',
+    'news.n4.title': 'Đã đăng tại RIVF 2025 và icSoftComp',
     'news.n4.body.html': 'Bốn bài tại <strong>RIVF 2025</strong> và một bài trong tuyển tập soft computing của Springer.',
     'news.n5.date': '06/2025',
     'news.n5.title': 'Hội đồng bảo vệ khoá luận',
@@ -340,18 +306,16 @@ const I18N = {
 
     // Home — recent publications
     'home.pubs.title': 'Công bố gần đây',
-    'home.pubs.sub': 'Một số bài tiêu biểu. Danh mục đầy đủ nằm ở trang Nghiên cứu.',
+    'home.pubs.sub': 'Một số bài tiêu biểu. Danh mục đầy đủ ở trang Nghiên cứu.',
     'home.pubs.cta': 'Xem toàn bộ công bố',
 
-    // Publication badges + cover labels
+    // Publication status labels
     'badge.published': 'Đã xuất bản',
     'badge.accepted': 'Đã chấp nhận',
     'badge.review': 'Đang phản biện',
     'badge.abstract': 'Đã duyệt tóm tắt',
     'pub.type.journal': 'Bài tạp chí',
     'pub.type.conf': 'Bài hội nghị',
-    'pub.type.review': 'Đang phản biện',
-    'pub.type.abstract': 'Đã duyệt tóm tắt',
 
     // Research page stats
     'research.stat.pubs': 'Công bố',
@@ -361,15 +325,15 @@ const I18N = {
     // Mentoring page
     'mentor.eyebrow': 'Hướng dẫn',
     'mentor.h1': 'Hướng dẫn sinh viên',
-    'mentor.lede': 'Bên dưới là các sinh viên tôi đang hướng dẫn — đề tài Nghiên cứu Khoa học cấp trường (NCKH), khoá luận tốt nghiệp, và sinh viên ngoài VLU mà tôi đồng hướng dẫn.',
+    'mentor.lede': 'Tôi hướng dẫn các nhóm Nghiên cứu Khoa học cấp trường (NCKH) và khoá luận tốt nghiệp tại Văn Lang, phần lớn đồng hướng dẫn cùng TS. Ngô Hoàng Tú. Mười một sinh viên khác đến từ HCMUS, HUST, PTIT Hà Nội, Vingroup và University of Sydney.',
     'mentor.nckh.title': 'Hướng dẫn NCKH · Cấp trường',
     'mentor.nckh.intro': 'Các nhóm sinh viên đang thực hiện đề tài Nghiên cứu Khoa học Cấp trường. Tên sinh viên xếp theo thứ tự danh sách của nhóm.',
     'mentor.thesis.title': 'Sinh viên đại học · Khoá luận',
-    'mentor.thesis.intro': 'Các sinh viên tôi hướng dẫn khoá luận tốt nghiệp, sắp xếp theo khoá ra trường. Các mục đồng hướng dẫn được phối hợp với TS. Ngô Hoàng Tú.',
+    'mentor.thesis.intro': 'Các sinh viên tôi hướng dẫn khoá luận tốt nghiệp, sắp xếp theo khoá ra trường.',
+    'mentor.thesis.cosup.legend': '† Đồng hướng dẫn với TS. Ngô Hoàng Tú.',
     'mentor.thesis.cohort.20242020': '2020 – 2024 · Đã tốt nghiệp',
     'mentor.thesis.cohort.20252021': '2021 – 2025 · Đã tốt nghiệp',
     'mentor.thesis.cohort.20262022': '2022 – 2026 · Đang thực hiện',
-    'mentor.thesis.cohort.count.html': '{n} sinh viên',
     'mentor.thesis.honor.thesisvale': 'Thủ khoa khoá luận',
     'mentor.thesis.honor.facvale': 'Thủ khoa Khoa CNTT-VLU 2026',
     'mentor.thesis.cosup': 'Đồng HD: TS. Ngô Hoàng Tú',
@@ -378,7 +342,6 @@ const I18N = {
     'mentor.ext.cohort': 'Đơn vị ngoài VLU',
 
     // Home — hero
-    'home.eyebrow': 'Giảng viên',
     'home.lede.html': 'Giảng viên Khoa Công nghệ Thông tin, <a href="https://www.vlu.edu.vn/" target="_blank" rel="noopener">Đại học Văn Lang</a>. Thạc sĩ Khoa học Dữ liệu & TTNT từ <a href="https://ait.ac.th/" target="_blank" rel="noopener">AIT, Thái Lan</a>.',
     'home.fact.research.label': 'Hướng',
     'home.fact.research.body': 'Học máy · Học sâu · Thị giác máy tính',
@@ -386,7 +349,6 @@ const I18N = {
     'home.fact.github.label': 'GitHub',
     'home.fact.scholar.label': 'Scholar',
     'home.cta.research': 'Xem nghiên cứu',
-    'home.cta.cv': 'Tải CV',
 
     // Affiliations
     'aff.label': 'Đơn vị',
@@ -397,14 +359,6 @@ const I18N = {
     'aff.ait': 'Asian Institute of Technology',
     'aff.ait.role': 'Thạc sĩ · Thái Lan · 2024',
 
-    // Home — metrics
-    'home.metrics.title': 'Chỉ số Scholar',
-    'home.metrics.citations': 'Trích dẫn',
-    'home.metrics.hindex': 'h-index',
-    'home.metrics.i10': 'i10-index',
-    'home.metrics.note': 'Số liệu chụp lại — mở Google Scholar để xem mới nhất.',
-    'home.metrics.cta': 'Mở hồ sơ Scholar',
-
     // Home — about
     'home.about.title': 'Giới thiệu',
     'home.about.p1': 'Tôi là giảng viên Khoa Công nghệ Thông tin, Đại học Văn Lang, đồng thời là Trợ lý Trưởng khoa. Cử nhân CNTT tại Đại học Văn Lang (2018–2022), Thạc sĩ Khoa học Dữ liệu & TTNT tại Asian Institute of Technology (AIT), Thái Lan (2022–2024).',
@@ -413,33 +367,21 @@ const I18N = {
     // Home — research interests
     'home.interests.title': 'Hướng nghiên cứu',
     'home.interest.cv.tag': 'Thị giác máy tính',
-    'home.interest.cv.desc': 'Phát hiện đối tượng, phân vùng, LiDAR / điểm mây, ảnh y khoa.',
+    'home.interest.cv.desc': 'Phát hiện đối tượng, phân vùng, điểm mây LiDAR, ảnh y khoa.',
     'home.interest.dl.tag': 'Học sâu',
-    'home.interest.dl.desc': 'CNN, Vision Transformer, kiến trúc lai pruned-residual.',
+    'home.interest.dl.desc': 'CNN và Vision Transformer, gồm kiến trúc lai Swin với pruned-residual.',
     'home.interest.rec.tag': 'Hệ khuyến nghị',
-    'home.interest.rec.desc': 'Khuyến nghị dựa trên ảnh, mô hình kết hợp dữ liệu hành vi.',
+    'home.interest.rec.desc': 'Khuyến nghị dựa trên ảnh thay vì điểm đánh giá.',
     'home.interest.app.tag': 'ML ứng dụng',
     'home.interest.app.desc': 'Y tế, nông nghiệp, ngôn ngữ ký hiệu, giao thông, mạng máy tính.',
 
     // Home — news feed
     'home.news.title': 'Tin mới',
-    'home.news.1.date': '06/2025',
-    'home.news.1.body.html': 'Đảm nhiệm <strong>Thư ký Hội đồng Bảo vệ Khoá luận tốt nghiệp</strong> tại VLU.',
-    'home.news.2.date': '2025',
-    'home.news.2.body.html': 'Năm bài hội nghị được chấp nhận, gồm bốn bài tại <strong>RIVF 2025</strong> và một bài Springer về soft computing.',
-    'home.news.3.date': '09/2025',
-    'home.news.3.body': 'Bắt đầu thỉnh giảng tại Đại học Công Thương TP.HCM (HUIT).',
-    'home.news.5.date': '08/2024',
-    'home.news.5.body.html': 'Khách mời chia sẻ tại sự kiện <strong>AI TECH</strong>.',
-    'home.news.6.date': '07/2024',
-    'home.news.6.body': 'Gia nhập Đại học Văn Lang với vai trò giảng viên Khoa CNTT.',
-    'home.news.7.date': '2024',
-    'home.news.7.body': 'Hoàn thành Thạc sĩ Khoa học Dữ liệu & TTNT tại AIT, Thái Lan.',
 
     // Research
     'research.eyebrow': 'Nghiên cứu',
     'research.h1': 'Công bố, dự án & luận văn',
-    'research.lede': 'Công việc của tôi trải dài qua khoa học dữ liệu, AI, thị giác máy tính và các ứng dụng học máy — với các hướng đang triển khai về điểm mây LiDAR, hệ khuyến nghị và mô hình học sâu cho y tế và nông nghiệp.',
+    'research.lede': 'Tôi làm về thị giác máy tính và học máy, trên nền khoa học dữ liệu và AI. Các hướng đang triển khai là điểm mây LiDAR, hệ khuyến nghị, và học sâu cho y tế và nông nghiệp.',
     'research.cta.scholar': 'Xem trên Google Scholar',
     'research.cta.github': 'GitHub',
 
@@ -449,9 +391,14 @@ const I18N = {
     'research.thesis.bsc.kicker': 'Cử nhân · 2022 · Đại học Văn Lang',
     'research.thesis.bsc.degree': 'Cử nhân Công nghệ Thông tin — Đại học Văn Lang, Việt Nam.',
 
-    'research.pubs.title': 'Công bố tiêu biểu',
-    'research.submitted.title': 'Bản thảo đang phản biện',
-    'research.submitted.intro': 'Các bản thảo đang trong quá trình phản biện. (* là tác giả liên hệ.)',
+    'research.pubs.title': 'Công bố',
+    'research.pubs.legend': 'Chữ in đậm là tên tôi. Dấu sao là tác giả liên hệ.',
+    'research.pubs.journals': 'Bài báo tạp chí',
+    'research.pubs.conferences': 'Bài báo hội nghị',
+    'research.submitted.title': 'Bản thảo đã nộp',
+    'research.submitted.intro': 'Các công trình đã nộp, chưa xuất bản. Chữ in đậm là tên tôi, dấu sao là tác giả liên hệ.',
+    'research.submitted.review.title': 'Đang phản biện',
+    'research.submitted.abstract.title': 'Đã duyệt tóm tắt',
     'research.collab.title': 'Hợp tác nghiên cứu trước đây',
     'grants.title': 'Đề tài & tài trợ',
     'grants.role.pi': 'Chủ nhiệm đề tài',
@@ -465,17 +412,13 @@ const I18N = {
     // Teaching
     'teaching.eyebrow': 'Giảng dạy',
     'teaching.h1': 'Học phần, cố vấn & hướng dẫn',
-    'teaching.lede': 'Tôi giảng dạy AI, học sâu và phân tích dữ liệu tại Đại học Văn Lang, đồng thời thỉnh giảng tại HUIT và VLSC. Bên dưới: học kỳ hiện tại, lịch sử giảng dạy đầy đủ, và toàn bộ danh sách nhóm sinh viên NCKH / khoá luận tôi đang hướng dẫn.',
+    'teaching.lede': 'Tôi giảng dạy AI, học sâu và phân tích dữ liệu tại Đại học Văn Lang, đồng thời thỉnh giảng tại HUIT và trước đó tại VLSC.',
 
     'teaching.current.title': 'Đang giảng dạy · Học kỳ 253 · 2025–2026',
     'teaching.vlu.subtitle': 'Đại học Văn Lang (VLU)',
-    'teaching.huit.subtitle.html': 'Đại học Công Thương TP.HCM (HUIT) <span class="badge muted-badge">Thỉnh giảng</span>',
-    'teaching.vlsc.subtitle.html': 'VLSC <span class="badge muted-badge">Thỉnh giảng</span>',
 
     'teaching.history.title': 'Lịch sử giảng dạy',
     'teaching.sem.252': 'Học kỳ 252 · 2025–2026',
-    'teaching.sem.252.vlu': 'Đại học Văn Lang (VLU)',
-    'teaching.sem.252.huit': 'Đại học Công Thương TP.HCM (HUIT)',
     'teaching.sem.251': 'Học kỳ 251 · 2025–2026',
     'teaching.sem.243': 'Học kỳ 243 · 2024–2025',
     'teaching.sem.242': 'Học kỳ 242 · 2024–2025',
@@ -485,9 +428,6 @@ const I18N = {
     'teaching.advisor.title': 'Cố vấn học tập · 2024–2025',
     'teaching.advisor.body.html': 'Cố vấn học tập cho bốn lớp: <strong>71K30IT05, 71K30IT06, 71K30IT13</strong> (29 sinh viên/lớp) và <strong>72K30IT01</strong> (33 sinh viên, chương trình CTCLC).',
 
-    'teaching.adv.title': 'Hướng dẫn NCKH & Khoá luận',
-    'teaching.adv.intro': 'Bên dưới là các nhóm sinh viên NCKH và đề tài khoá luận tốt nghiệp mà tôi đang hướng dẫn. Tên sinh viên xếp theo trình tự danh sách của nhóm.',
-    'teaching.adv.label.period': 'Thời gian',
     'teaching.adv.label.team': 'Nhóm sinh viên',
     'teaching.adv.label.coadv': 'Đồng hướng dẫn',
 
@@ -499,15 +439,11 @@ const I18N = {
     'teaching.adv.p6.title': 'Ứng dụng mô hình YOLO-Segmentation trong phát hiện và phân đoạn tổn thương da từ ảnh y khoa',
     'teaching.adv.p7.title': 'Đánh giá và so sánh hiệu suất của deep learning-enhanced kết hợp với UMAP và HDBSCAN với các phương pháp truyền thống trong phân cụm dữ liệu gene đơn tế bào (scRNA-seq)',
 
-    'teaching.past.title': 'Hợp tác nghiên cứu trước đây',
-    'teaching.past.label.role': 'Vai trò',
-    'teaching.past.role.member': 'Thành viên',
     'teaching.past.1.title': 'Plugin Moodle phân tích log đánh giá hiệu quả học tập',
     'teaching.past.2.title': 'Cải tiến framework MetaDistil (NLP)',
 
     'teaching.ext.title': 'Sinh viên & cộng tác bên ngoài',
     'teaching.ext.intro': 'Sinh viên từ các đơn vị đối tác và mentees ngoài VLU mà tôi hướng dẫn hoặc đồng hướng dẫn.',
-    'teaching.ext.placeholder': 'Danh sách sẽ cập nhật — mục này sẽ được điền khi có thông tin.',
 
     'teaching.ta.title': 'Trợ giảng · 01/2021 – 08/2022',
     'teaching.ta.body': 'Hỗ trợ giảng dạy sáu môn:',
@@ -547,7 +483,7 @@ const I18N = {
     'talks.t3.date': '2021',
     'talks.t3.title': 'FAIR 2021 — Trình bày hội nghị',
     'talks.t3.venue': 'Hội nghị Quốc gia về Nghiên cứu Cơ bản và Ứng dụng CNTT',
-    'talks.t3.desc': 'Trình bày nghiên cứu khoá luận tốt nghiệp — hệ khuyến nghị việc làm cho sinh viên CNTT dựa trên năng lực học tập và nhu cầu doanh nghiệp.',
+    'talks.t3.desc': 'Trình bày khoá luận tốt nghiệp: hệ khuyến nghị việc làm cho sinh viên CNTT dựa trên năng lực học tập và nhu cầu doanh nghiệp.',
 
     'awards.title': 'Giải thưởng & danh hiệu',
     'awards.a1.title': 'Thủ khoa',

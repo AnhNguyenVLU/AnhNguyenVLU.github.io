@@ -9,11 +9,11 @@
   <meta property="og:title" content="Nguyen Thai Anh — Lecturer, Van Lang University" />
   <meta property="og:description" content="Lecturer at Van Lang University. MSc from AIT, Thailand. Research in ML / DL / Computer Vision." />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#059669" />
+  <meta property="og:image" content="https://anhnguyenvlu.github.io/assets/img/profile.jpg" />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
@@ -87,35 +87,19 @@
   <div class="shell">
   <main id="main">
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <p class="hero-hi" data-i18n="home.hi">Hey there 👋</p>
-          <h1>Nguyen Thai Anh</h1>
-          <p class="hero-role" data-i18n="home.role">Lecturer @ Van Lang University</p>
-          <p class="lede" data-i18n-html="home.lede.html">
-            Lecturer at the Faculty of Information Technology,
-            <a href="https://www.vlu.edu.vn/" target="_blank" rel="noopener">Van Lang University</a>.
-            MSc in Data Science &amp; AI from <a href="https://ait.ac.th/" target="_blank" rel="noopener">AIT, Thailand</a>.
-          </p>
-          <ul class="quick-facts">
-            <li><strong data-i18n="home.fact.research.label">Research</strong> <span data-i18n="home.fact.research.body">Machine Learning · Deep Learning · Computer Vision</span></li>
-            <li><strong data-i18n="home.fact.email.label">Email</strong> <a href="mailto:anh.nt@vlu.edu.vn">anh.nt@vlu.edu.vn</a></li>
-            <li><strong data-i18n="home.fact.github.label">GitHub</strong> <a href="https://github.com/AnhNguyenVLU" target="_blank" rel="noopener">@AnhNguyenVLU</a></li>
-            <li><strong data-i18n="home.fact.scholar.label">Scholar</strong> <a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener">scholar.google.com</a></li>
-          </ul>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="research.html" data-i18n="home.cta.research">View research</a>
-            <a class="btn btn-ghost" href="assets/cv.pdf" data-i18n="home.cta.cv">Download CV</a>
-            <a class="btn btn-ghost" href="mailto:anh.nt@vlu.edu.vn" data-i18n="home.cta.email">Email me</a>
-          </div>
+      <div class="container">
+        <h1>Nguyen Thai Anh</h1>
+        <p class="lede" data-i18n-html="home.lede.html">Lecturer at the Faculty of Information Technology, <a href="https://www.vlu.edu.vn/" target="_blank" rel="noopener">Van Lang University</a>. MSc in Data Science &amp; AI from <a href="https://ait.ac.th/" target="_blank" rel="noopener">AIT, Thailand</a>.</p>
+        <ul class="quick-facts">
+          <li><strong data-i18n="home.fact.research.label">Research</strong> <span data-i18n="home.fact.research.body">Machine Learning · Deep Learning · Computer Vision</span></li>
+          <li><strong data-i18n="home.fact.email.label">Email</strong> <a href="mailto:anh.nt@vlu.edu.vn">anh.nt@vlu.edu.vn</a></li>
+          <li><strong data-i18n="home.fact.github.label">GitHub</strong> <a href="https://github.com/AnhNguyenVLU" target="_blank" rel="noopener">@AnhNguyenVLU</a></li>
+          <li><strong data-i18n="home.fact.scholar.label">Scholar</strong> <a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener">scholar.google.com</a></li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="research.html" data-i18n="home.cta.research">View research</a>
+          <a class="btn btn-ghost" href="mailto:anh.nt@vlu.edu.vn" data-i18n="home.cta.email">Email me</a>
         </div>
-        <aside class="hero-photo">
-          <div class="photo-frame">
-            <img src="assets/img/profile.jpg" alt="Portrait of Nguyen Thai Anh"
-                 onerror="this.parentElement.classList.add('photo-fallback');this.style.display='none';" />
-            <span class="photo-initials">NTA</span>
-          </div>
-        </aside>
       </div>
     </section>
 
@@ -141,68 +125,29 @@
 
     <section class="section">
       <div class="container">
-        <p class="section-kicker" data-i18n="home.metrics.title">Scholar metrics</p>
-        <div class="metrics-card">
-          <!--
-            TODO: cập nhật 3 con số bên dưới từ Google Scholar
-            (https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ — khối "Cited by").
-            Đổi nội dung trong <span class="metric-value">…</span> rồi bỏ class "placeholder".
-          -->
-          <div class="metrics-item">
-            <span class="metric-value placeholder">—</span>
-            <span class="metric-label" data-i18n="home.metrics.citations">Citations</span>
-          </div>
-          <div class="metrics-item">
-            <span class="metric-value placeholder">—</span>
-            <span class="metric-label" data-i18n="home.metrics.hindex">h-index</span>
-          </div>
-          <div class="metrics-item">
-            <span class="metric-value placeholder">—</span>
-            <span class="metric-label" data-i18n="home.metrics.i10">i10-index</span>
-          </div>
-          <div class="metrics-cta">
-            <p class="muted" data-i18n="home.metrics.note">Snapshot — open Google Scholar for the latest.</p>
-            <a class="btn btn-ghost btn-sm" href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener" data-i18n="home.metrics.cta">Open Scholar profile</a>
-          </div>
+        <h2 class="section-title" data-i18n="home.about.title">About</h2>
+        <div class="prose">
+          <p data-i18n="home.about.p1">I am a lecturer at the Faculty of Information Technology, Van Lang University, and Assistant to the Dean. I earned my BSc in IT from VLU (2018–2022) and my MSc in Data Science and Artificial Intelligence from the Asian Institute of Technology (AIT), Thailand (2022–2024).</p>
+          <p data-i18n-html="home.about.p2.html">My research sits at the intersection of <em>machine learning</em>, <em>deep learning</em>, and <em>computer vision</em>, with active threads in LiDAR point cloud processing, recommendation systems, medical image segmentation, Vietnamese sign-language recognition, and agricultural vision. I supervise undergraduate research and thesis projects at VLU and collaborate with peers across partner institutions.</p>
         </div>
       </div>
     </section>
 
     <section class="section section-alt">
       <div class="container">
-        <h2 class="section-title" data-i18n="home.about.title">About</h2>
-        <div class="prose">
-          <p data-i18n="home.about.p1">
-            I am a lecturer at the Faculty of Information Technology, Van Lang University, and Assistant to the Dean.
-            I earned my BSc in IT from VLU (2018–2022) and my MSc in Data Science and Artificial Intelligence
-            from the Asian Institute of Technology (AIT), Thailand (2022–2024).
-          </p>
-          <p data-i18n-html="home.about.p2.html">
-            My research sits at the intersection of <em>machine learning</em>, <em>deep learning</em>, and
-            <em>computer vision</em>, with active threads in LiDAR point cloud processing, recommendation systems,
-            medical image segmentation, Vietnamese sign-language recognition, and agricultural vision.
-            I supervise undergraduate research and thesis projects at VLU and collaborate with peers
-            across partner institutions.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
         <h2 class="section-title" data-i18n="home.interests.title">Research interests</h2>
         <ul class="tag-grid">
           <li>
             <span class="tag" data-i18n="home.interest.cv.tag">Computer Vision</span>
-            <p data-i18n="home.interest.cv.desc">Object detection, segmentation, LiDAR / point clouds, medical imaging.</p>
+            <p data-i18n="home.interest.cv.desc">Object detection, segmentation, LiDAR point clouds, medical imaging.</p>
           </li>
           <li>
             <span class="tag" data-i18n="home.interest.dl.tag">Deep Learning</span>
-            <p data-i18n="home.interest.dl.desc">CNNs, Vision Transformers, hybrid pruned-residual architectures.</p>
+            <p data-i18n="home.interest.dl.desc">CNNs and Vision Transformers, including hybrid Swin and pruned-residual architectures.</p>
           </li>
           <li>
             <span class="tag" data-i18n="home.interest.rec.tag">Recommender Systems</span>
-            <p data-i18n="home.interest.rec.desc">Image-based recommendation, fusion models for behavior data.</p>
+            <p data-i18n="home.interest.rec.desc">Recommendation driven by images rather than ratings.</p>
           </li>
           <li>
             <span class="tag" data-i18n="home.interest.app.tag">Applied ML</span>
@@ -212,95 +157,77 @@
       </div>
     </section>
 
-    <section class="section section-alt">
+    <section class="section">
       <div class="container">
         <div class="section-head">
           <h2 class="section-title" data-i18n="home.news.title">News</h2>
-          <p class="section-sub" data-i18n="home.news.sub">Recent publications, appointments and milestones</p>
+          <p class="section-sub" data-i18n="home.news.sub">Appointments, acceptances and milestones</p>
         </div>
 
-        <!--
-          TODO: thêm tin mới ở ĐẦU danh sách. Mỗi mục dùng một tông màu:
-          tl-brand (xanh) · tl-blue · tl-amber · tl-violet · tl-rose · tl-slate
-        -->
         <ol class="timeline">
-          <li class="tl-item tl-brand">
+          <li class="tl-item">
             <div class="tl-date"><span data-i18n="news.n1.date">2026</span></div>
-            <div class="tl-rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
-            <div class="tl-card">
-              <p class="tl-title"><span class="ico" aria-hidden="true">🎉</span><span data-i18n="news.n1.title">Two papers at IEEE Access</span></p>
+            <div>
+              <p class="tl-title"><span data-i18n="news.n1.title">Two papers at IEEE Access</span></p>
               <div class="tl-mini">
-                <div>
-                  <b data-i18n="news.n1.a.title">Wood–Leaf Separation Review</b>
-                  <span data-i18n="news.n1.a.desc">Published · vol. 14, pp. 107383–107416</span>
-                </div>
-                <div>
-                  <b data-i18n="news.n1.b.title">VietJobs-37K &amp; VieJobBERT</b>
-                  <span data-i18n="news.n1.b.desc">Accepted · Vietnamese occupation classification</span>
-                </div>
+                <div><b data-i18n="news.n1.a.title">Wood–Leaf Separation Review</b><span data-i18n="news.n1.a.desc">published, vol. 14, pp. 107383–107416</span></div>
+                <div><b data-i18n="news.n1.b.title">VietJobs-37K &amp; VieJobBERT</b><span data-i18n="news.n1.b.desc">accepted, Vietnamese occupation classification</span></div>
               </div>
             </div>
           </li>
 
-          <li class="tl-item tl-blue">
+          <li class="tl-item">
             <div class="tl-date"><span data-i18n="news.n2.date">2026</span></div>
-            <div class="tl-rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
-            <div class="tl-card">
-              <p class="tl-title"><span class="ico" aria-hidden="true">📄</span><span data-i18n="news.n2.title">Five conference acceptances</span></p>
-              <p class="tl-body" data-i18n-html="news.n2.body.html">One paper at <strong>MAPR 2026</strong> on heterophily-aware conformal prediction, three at <strong>ISRSD 2026</strong> covering single-cell clustering, motor-imagery EEG and on-device plant disease detection, and one at <strong>SIMC 2026</strong> on Vietnamese spam and toxic comment detection.</p>
+            <div>
+              <p class="tl-title"><span data-i18n="news.n2.title">Accepted at MAPR, ISRSD and SIMC</span></p>
+              <p class="tl-body" data-i18n-html="news.n2.body.html">One paper at <strong>MAPR</strong> on heterophily-aware conformal prediction, three at <strong>ISRSD</strong> on single-cell clustering, motor-imagery EEG and on-device plant disease detection, and one at <strong>SIMC</strong> on Vietnamese spam and toxic comment detection.</p>
             </div>
           </li>
 
-          <li class="tl-item tl-violet">
+          <li class="tl-item">
             <div class="tl-date"><span data-i18n="news.n3.date">Sep 2025</span></div>
-            <div class="tl-rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
-            <div class="tl-card">
-              <p class="tl-title"><span class="ico" aria-hidden="true">🎓</span><span data-i18n="news.n3.title">Guest lectureship at HUIT</span></p>
+            <div>
+              <p class="tl-title"><span data-i18n="news.n3.title">Guest lectureship at HUIT</span></p>
               <p class="tl-body" data-i18n="news.n3.body">Began teaching Deep Learning and Artificial Intelligence at the University of Industry and Trade.</p>
             </div>
           </li>
 
-          <li class="tl-item tl-blue">
+          <li class="tl-item">
             <div class="tl-date"><span data-i18n="news.n4.date">2025</span></div>
-            <div class="tl-rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
-            <div class="tl-card">
-              <p class="tl-title"><span class="ico" aria-hidden="true">📄</span><span data-i18n="news.n4.title">Five conference papers accepted</span></p>
+            <div>
+              <p class="tl-title"><span data-i18n="news.n4.title">Published at RIVF 2025 and icSoftComp</span></p>
               <p class="tl-body" data-i18n-html="news.n4.body.html">Four papers at <strong>RIVF 2025</strong> and one in a Springer soft-computing volume.</p>
             </div>
           </li>
 
-          <li class="tl-item tl-slate">
+          <li class="tl-item">
             <div class="tl-date"><span data-i18n="news.n5.date">Jun 2025</span></div>
-            <div class="tl-rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
-            <div class="tl-card">
-              <p class="tl-title"><span class="ico" aria-hidden="true">📋</span><span data-i18n="news.n5.title">Thesis defense committee</span></p>
+            <div>
+              <p class="tl-title"><span data-i18n="news.n5.title">Thesis defense committee</span></p>
               <p class="tl-body" data-i18n-html="news.n5.body.html">Served as <strong>Secretary of the Graduation Thesis Defense Committee</strong> at VLU.</p>
             </div>
           </li>
 
-          <li class="tl-item tl-amber">
+          <li class="tl-item">
             <div class="tl-date"><span data-i18n="news.n6.date">Aug 2024</span></div>
-            <div class="tl-rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
-            <div class="tl-card">
-              <p class="tl-title"><span class="ico" aria-hidden="true">🎤</span><span data-i18n="news.n6.title">Guest speaker on AI TECH</span></p>
+            <div>
+              <p class="tl-title"><span data-i18n="news.n6.title">Guest speaker on AI TECH</span></p>
               <p class="tl-body" data-i18n="news.n6.body">Invited talk on applied AI and deep learning for industry.</p>
             </div>
           </li>
 
-          <li class="tl-item tl-brand">
+          <li class="tl-item">
             <div class="tl-date"><span data-i18n="news.n7.date">Jul 2024</span></div>
-            <div class="tl-rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
-            <div class="tl-card">
-              <p class="tl-title"><span class="ico" aria-hidden="true">🏫</span><span data-i18n="news.n7.title">Joined Van Lang University</span></p>
+            <div>
+              <p class="tl-title"><span data-i18n="news.n7.title">Joined Van Lang University</span></p>
               <p class="tl-body" data-i18n="news.n7.body">Appointed lecturer in the Faculty of Information Technology.</p>
             </div>
           </li>
 
-          <li class="tl-item tl-slate">
+          <li class="tl-item">
             <div class="tl-date"><span data-i18n="news.n8.date">2024</span></div>
-            <div class="tl-rail"><span class="tl-dot"></span><span class="tl-line"></span></div>
-            <div class="tl-card">
-              <p class="tl-title"><span class="ico" aria-hidden="true">🎓</span><span data-i18n="news.n8.title">MSc completed at AIT</span></p>
+            <div>
+              <p class="tl-title"><span data-i18n="news.n8.title">MSc completed at AIT</span></p>
               <p class="tl-body" data-i18n="news.n8.body">Graduated in Data Science and Artificial Intelligence, Asian Institute of Technology, Thailand.</p>
             </div>
           </li>
@@ -308,74 +235,47 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-alt">
       <div class="container">
         <div class="section-head">
           <h2 class="section-title" data-i18n="home.pubs.title">Recent publications</h2>
-          <p class="section-sub" data-i18n="home.pubs.sub">A selection — the full list lives on the research page</p>
+          <p class="section-sub" data-i18n="home.pubs.sub">A selection. The full list is on the research page.</p>
         </div>
 
         <ol class="pub-list">
           <li class="pub-card">
-            <div class="pub-thumb thumb-emerald">
-              <span class="pub-thumb-kicker" data-i18n="pub.type.journal">Journal Article</span>
-              <div>
-                <div class="pub-thumb-venue">IEEE Access</div>
-                <div class="pub-thumb-year">2026</div>
-              </div>
-            </div>
-            <div class="pub-body">
-              <div class="badges">
-                <span class="badge badge-published" data-i18n="badge.published">Published</span>
-                <span class="badge badge-venue">IEEE Access</span>
-              </div>
-              <h3 class="pub-title"><a href="https://doi.org/10.1109/ACCESS.2026.3709955" target="_blank" rel="noopener">Automated Wood and Leaf Separation: A Comprehensive Review on Advanced Methods and Forestry Applications</a></h3>
-              <p class="pub-authors">T. V. Vu, N. P. Nguyen, D. T. T. Hang, <b class="me">A. T. Nguyen</b>, T. T. Thanh, V. N. Q. Bao, and N. H. Tu</p>
-              <p class="pub-venue"><em>IEEE Access</em>, vol. 14, pp. 107383–107416, 2026. doi:10.1109/ACCESS.2026.3709955</p>
+            <h3 class="pub-title"><a href="https://doi.org/10.1109/ACCESS.2026.3709955" target="_blank" rel="noopener">Automated Wood and Leaf Separation: A Comprehensive Review on Advanced Methods and Forestry Applications</a></h3>
+            <p class="pub-authors">T. V. Vu, N. P. Nguyen, D. T. T. Hang, <b class="me">A. T. Nguyen</b>, T. T. Thanh, V. N. Q. Bao, and N. H. Tu</p>
+            <p class="pub-venue"><em>IEEE Access</em>, vol. 14, pp. 107383–107416, 2026.</p>
+            <div class="badges">
+              <span class="badge badge-type" data-i18n="pub.type.journal">Journal Article</span>
+              <span class="badge badge-published" data-i18n="badge.published">Published</span>
             </div>
           </li>
 
           <li class="pub-card">
-            <div class="pub-thumb thumb-blue">
-              <span class="pub-thumb-kicker" data-i18n="pub.type.conf">Conference Paper</span>
-              <div>
-                <div class="pub-thumb-venue">MAPR</div>
-                <div class="pub-thumb-year">2026</div>
-              </div>
-            </div>
-            <div class="pub-body">
-              <div class="badges">
-                <span class="badge badge-accepted" data-i18n="badge.accepted">Accepted</span>
-                <span class="badge badge-venue">MAPR 2026</span>
-              </div>
-              <h3 class="pub-title">HeAD-CP: Heterophily-Aware Diffused Conformal Prediction Sets for Graph Neural Networks</h3>
-              <p class="pub-authors">Lam Phan, <b class="me">Nguyen Thai Anh</b></p>
-              <p class="pub-venue">In <em>The 9th International Conference on Multimedia Analysis and Pattern Recognition (MAPR)</em>, 2026.</p>
+            <h3 class="pub-title">HeAD-CP: Heterophily-Aware Diffused Conformal Prediction Sets for Graph Neural Networks</h3>
+            <p class="pub-authors">Lam Phan and <b class="me">Nguyen Thai Anh</b></p>
+            <p class="pub-venue">In <em>Proc. International Conference on Multimedia Analysis and Pattern Recognition (MAPR)</em>, 2026.</p>
+            <div class="badges">
+              <span class="badge badge-type" data-i18n="pub.type.conf">Conference Paper</span>
+              <span class="badge badge-accepted" data-i18n="badge.accepted">Accepted</span>
             </div>
           </li>
 
           <li class="pub-card">
-            <div class="pub-thumb thumb-violet">
-              <span class="pub-thumb-kicker" data-i18n="pub.type.conf">Conference Paper</span>
-              <div>
-                <div class="pub-thumb-venue">RIVF</div>
-                <div class="pub-thumb-year">2025</div>
-              </div>
-            </div>
-            <div class="pub-body">
-              <div class="badges">
-                <span class="badge badge-published" data-i18n="badge.published">Published</span>
-                <span class="badge badge-venue">RIVF · IEEE</span>
-              </div>
-              <h3 class="pub-title">Swin-PResU: Hybrid Swin ViT and Pruned Residual CNN for Precise Brain Tumor MRI Segmentation</h3>
-              <p class="pub-authors">Nguyen, N. P., Hang, D. T. T., Vu, T. V., Tu, N. H., &amp; <b class="me">Anh, N. T.</b></p>
-              <p class="pub-venue">In <em>2025 RIVF International Conference on Computing and Communication Technologies</em>, pp. 149–154. IEEE, 2025.</p>
+            <h3 class="pub-title">Swin-PResU: Hybrid Swin ViT and Pruned Residual CNN for Precise Brain Tumor MRI Segmentation</h3>
+            <p class="pub-authors">N. P. Nguyen, D. T. T. Hang, T. V. Vu, N. H. Tu, and <b class="me">A. T. Nguyen</b></p>
+            <p class="pub-venue">In <em>Proc. RIVF International Conference on Computing and Communication Technologies (RIVF)</em>, pp. 149–154, 2025.</p>
+            <div class="badges">
+              <span class="badge badge-type" data-i18n="pub.type.conf">Conference Paper</span>
+              <span class="badge badge-published" data-i18n="badge.published">Published</span>
             </div>
           </li>
         </ol>
 
-        <div class="cta-row" style="margin-top:24px;">
-          <a class="btn btn-primary" href="research.html" data-i18n="home.pubs.cta">View all publications</a>
+        <div class="cta-row stack-lg">
+          <a class="btn btn-ghost" href="research.html" data-i18n="home.pubs.cta">View all publications</a>
         </div>
       </div>
     </section>
