@@ -919,6 +919,17 @@ strong, b { font-weight: 600; color: var(--ink); }
   color: var(--muted);
   overflow-wrap: anywhere;
 }
+/* venue ranking and indexing. Proper nouns and symbols only, so the line
+   reads identically in both languages and needs no translation key. */
+.pub-index {
+  margin: 3px 0 0;
+  font-size: var(--t-xs);
+  line-height: 1.5;
+  color: var(--muted);
+  letter-spacing: .01em;
+}
+.pub-index b { font-weight: 600; color: var(--ink-soft); }
+
 .pub-card .badges { margin: 6px 0 0; }
 
 /* submitted manuscripts run tighter than the published record */
