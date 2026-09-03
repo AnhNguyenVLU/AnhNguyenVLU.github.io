@@ -229,12 +229,7 @@ strong, b { font-weight: 600; color: var(--ink); }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  /* profile.jpg is a full-length portrait; this frames the face.
-     Replace with a square headshot at assets/img/avatar.jpg and drop
-     the transform. */
-  transform: scale(1.55);
-  transform-origin: 50% 37%;
+  object-position: center;
 }
 .side-avatar .initials {
   position: absolute; inset: 0;
