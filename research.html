@@ -3,257 +3,161 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Research — Nguyen Thai Anh</title>
+  <title>Research · Nguyen Thai Anh</title>
   <meta name="description" content="Publications, submitted manuscripts, funded projects and theses of Nguyen Thai Anh." />
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="topbar">
-    <button class="drawer-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
-      <span></span><span></span><span></span>
-    </button>
-    <a class="topbar-brand" href="index.html">Nguyen Thai Anh</a>
-    <button class="lang-toggle" data-lang-toggle aria-label="Switch language">VI</button>
-  </header>
-  <div class="scrim" data-scrim></div>
-
-  <aside class="sidebar" id="sidebar">
-    <div class="side-inner">
-      <a class="side-id" href="index.html">
-        <span class="side-avatar">
-          <img src="assets/img/avatar.jpg" alt="Nguyen Thai Anh"
-               onerror="this.parentElement.classList.add('is-fallback');this.style.display='none';" />
-          <span class="initials">NTA</span>
-        </span>
-        <span class="side-name">Nguyen Thai Anh</span>
-        <span class="side-role" data-i18n="side.role">Lecturer · Van Lang University</span>
-      </a>
-
-      <nav class="side-nav" aria-label="Primary">
-        <a href="index.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-          <span data-i18n="nav.home">Home</span>
-        </a>
-        <a href="research.html" class="active">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M5.52 16h12.96"/></svg>
-          <span data-i18n="nav.research">Research</span>
-        </a>
-        <ul class="side-sub">
-          <li><a href="#publications" data-i18n="research.pubs.title">Publications</a></li>
-          <li><a href="#submitted" data-i18n="research.submitted.title">Submitted manuscripts</a></li>
-          <li><a href="#grants" data-i18n="grants.title">Projects &amp; grants</a></li>
-          <li><a href="#collaborations" data-i18n="research.collab.title">Past research collaborations</a></li>
-          <li><a href="#theses" data-i18n="research.theses.title">Theses</a></li>
-        </ul>
-        <a href="teaching.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m7 21 5-5 5 5"/></svg>
-          <span data-i18n="nav.teaching">Teaching</span>
-        </a>
-        <a href="mentoring.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-          <span data-i18n="nav.mentoring">Mentoring</span>
-        </a>
-        <a href="talks-awards.html">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          <span data-i18n="nav.talks">Talks &amp; Awards</span>
-        </a>
+  <header class="site-header">
+    <div class="masthead">
+      <p class="site-name"><a href="index.html" data-i18n="site.name">Nguyen Thai Anh</a></p>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" data-i18n="nav.home">Home</a>
+        <a href="research.html" aria-current="page" data-i18n="nav.research">Research</a>
+        <a href="teaching.html" data-i18n="nav.teaching">Teaching</a>
+        <a href="mentoring.html" data-i18n="nav.mentoring">Mentoring</a>
+        <a href="talks-awards.html" data-i18n="nav.talks">Talks &amp; Awards</a>
+        <button class="lang-toggle" type="button" data-lang-toggle>Tiếng Việt</button>
       </nav>
-
-      <div class="side-foot">
-        <ul class="side-social" aria-label="Social links">
-          <li><a href="mailto:anh.nt@vlu.edu.vn" aria-label="Email" title="Email">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5Z"/></svg>
-          </a></li>
-          <li><a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener" aria-label="Google Scholar" title="Google Scholar">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3ZM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/></svg>
-          </a></li>
-          <li><a href="https://github.com/AnhNguyenVLU" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2Z"/></svg>
-          </a></li>
-        </ul>
-        <button class="lang-toggle" data-lang-toggle aria-label="Switch language">VI</button>
-      </div>
     </div>
-  </aside>
+  </header>
 
-  <div class="shell">
   <main id="main">
     <section class="page-head">
       <div class="container">
-        <p class="eyebrow" data-i18n="research.eyebrow">Research</p>
         <h1 data-i18n="research.h1">Publications, projects &amp; theses</h1>
         <p class="lede" data-i18n="research.lede">I work on computer vision and machine learning, with a broader background in data science and AI. Current threads are LiDAR point clouds, recommendation systems, and deep learning for healthcare and agriculture.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener" data-i18n="research.cta.scholar">View on Google Scholar</a>
-          <a class="btn btn-ghost" href="https://github.com/AnhNguyenVLU" target="_blank" rel="noopener" data-i18n="research.cta.github">GitHub</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <ul class="stat-row">
-          <li class="metrics-item">
-            <span class="metric-value">15</span>
-            <span class="metric-label" data-i18n="research.stat.pubs">Publications</span>
-          </li>
-          <li class="metrics-item">
-            <span class="metric-value">18</span>
-            <span class="metric-label" data-i18n="research.stat.review">Under review</span>
-          </li>
-          <li class="metrics-item">
-            <span class="metric-value">3</span>
-            <span class="metric-label" data-i18n="research.stat.grants">Funded projects</span>
-          </li>
+        <p class="muted" data-i18n-html="research.scholar.html"><a href="https://scholar.google.com/citations?hl=en&amp;user=YZFnMJYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>: 8 citations, h-index 1 (August 2026).</p>
+        <ul class="toc">
+          <li><a href="#publications" data-i18n="research.toc.pubs">Publications</a></li>
+          <li><a href="#submitted" data-i18n="research.toc.submitted">Submitted</a></li>
+          <li><a href="#grants" data-i18n="research.toc.grants">Grants</a></li>
+          <li><a href="#collaborations" data-i18n="research.toc.collab">Collaborations</a></li>
+          <li><a href="#theses" data-i18n="research.toc.theses">Theses</a></li>
         </ul>
       </div>
     </section>
 
-    <section class="section section-alt" id="publications">
+
+    <section class="section" id="publications">
       <div class="container">
         <div class="section-head">
           <h2 class="section-title" data-i18n="research.pubs.title">Publications</h2>
-          <p class="section-sub" data-i18n="research.pubs.legend">Bold marks my name, an asterisk the corresponding author. Quartiles are Scimago (SJR) journal rankings for the edition year shown. Conference venues are not quartile-ranked.</p>
+          <p class="section-sub" data-i18n="research.pubs.legend">My name is in bold and an asterisk marks the corresponding author. Quartiles come from the Scimago Journal Rank (SJR) for the year shown, and each journal holds that quartile in every one of its subject categories. Conferences carry no quartile.</p>
         </div>
 
-        <div class="pub-group">
+        <div class="pub-group bib-J">
           <h3 class="year-label" data-i18n="research.pubs.journals">Journal articles</h3>
           <ol class="pub-list">
             <li class="pub-card">
               <h4 class="pub-title"><a href="https://doi.org/10.1109/ACCESS.2026.3709955" target="_blank" rel="noopener">Automated Wood and Leaf Separation: A Comprehensive Review on Advanced Methods and Forestry Applications</a></h4>
               <p class="pub-authors">T. V. Vu, N. P. Nguyen, D. T. T. Hang, <b class="me">A. T. Nguyen</b>, T. T. Thanh, V. N. Q. Bao, and N. H. Tu</p>
               <p class="pub-venue"><em>IEEE Access</em>, vol. 14, pp. 107383–107416, 2026.</p>
-              <p class="pub-index"><b>Q1</b> · Scimago 2025 · Computer Science (misc.), Engineering (misc.), Materials Science (misc.) · Scopus · SCIE</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
+              <p class="pub-index">Q1 (SJR 2025), Scopus, SCIE</p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title"><a href="https://doi.org/10.1109/ACCESS.2026.3718998" target="_blank" rel="noopener">VietJobs-37K and VieJobBERT: A Vietnamese Multi-Label Occupation Classification Dataset and Multi-Seed PhoBERT-v2 Reference Benchmark</a></h4>
               <p class="pub-authors">D. L. A. Kiet, <b class="me">A. T. Nguyen</b>, T. T. Thanh, V. N. Q. Bao, and N. H. Tu</p>
               <p class="pub-venue"><em>IEEE Access</em>, vol. 14, pp. 119006–119026, 2026.</p>
-              <p class="pub-index"><b>Q1</b> · Scimago 2025 · Computer Science (misc.), Engineering (misc.), Materials Science (misc.) · Scopus · SCIE</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
+              <p class="pub-index">Q1 (SJR 2025), Scopus, SCIE</p>
             </li>
 
             <li class="pub-card">
               <h4 class="pub-title"><a href="https://doi.org/10.1016/j.atech.2026.102531" target="_blank" rel="noopener">From Laboratory to Field: Frozen Foundation-Model Features Toward Robust Plant Disease Recognition</a></h4>
               <p class="pub-authors"><b class="me">Nguyen Thai Anh</b>, Son Dung Nguyen, Minh Quang Dang, Lam Nguyen Binh Phan, and Loi Huu Nguyen*</p>
               <p class="pub-venue"><em>Smart Agricultural Technology</em>, art. 102531, 2026.</p>
-              <p class="pub-index"><b>Q1</b> · Scimago 2025 · Agricultural and Biological Sciences (misc.), Artificial Intelligence, Computer Science (misc.) · Scopus</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
+              <p class="pub-index">Q1 (SJR 2025), Scopus</p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">Developing a Restaurant Recommended System via the Vietnamese Food Image Classification</h4>
               <p class="pub-authors">V. H. Pham, <b class="me">A. T. Nguyen</b>, and T. H. V. Phan</p>
               <p class="pub-venue"><em>International Journal of Electrical &amp; Computer Engineering (IJECE)</em>, vol. 14, no. 2, 2024.</p>
-              <p class="pub-index"><b>Q3</b> · Scimago 2024 · Computer Science (misc.), Electrical &amp; Electronic Engineering · Scopus 2014–2025</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
+              <p class="pub-index">Q3 (SJR 2024), Scopus 2014–2025</p>
             </li>
           </ol>
         </div>
 
-        <div class="pub-group">
+        <div class="pub-group bib-C">
           <h3 class="year-label" data-i18n="research.pubs.conferences">Conference papers</h3>
 
-          <p class="year-sub">2026</p>
           <ol class="pub-list">
             <li class="pub-card">
               <h4 class="pub-title">HeAD-CP: Heterophily-Aware Diffused Conformal Prediction Sets for Graph Neural Networks</h4>
               <p class="pub-authors">Lam Phan and <b class="me">Nguyen Thai Anh</b></p>
-              <p class="pub-venue">In <em>Proc. International Conference on Multimedia Analysis and Pattern Recognition (MAPR)</em>, 2026.</p>
-              <div class="badges"><span class="badge badge-accepted" data-i18n="badge.accepted">Accepted</span></div>
+              <p class="pub-venue">In <em>Proc. International Conference on Multimedia Analysis and Pattern Recognition (MAPR)</em>, 2026. <span class="pub-status" data-i18n="badge.accepted">Accepted</span></p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">When Does Deep Representation Learning Help Single-Cell Clustering? A Sensitivity-Aware Diagnostic Benchmark for Biomedical AI Pipelines</h4>
               <p class="pub-authors">Phong Nguyen, Vu Truong, Thu Nguyen, Ky Tran, Thong Tran, Hien Le, and <b class="me">Nguyen Thai Anh</b></p>
-              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Robotics for Sustainable Development (ISRSD)</em>, 2026.</p>
-              <div class="badges"><span class="badge badge-accepted" data-i18n="badge.accepted">Accepted</span></div>
+              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Robotics for Sustainable Development (ISRSD)</em>, 2026. <span class="pub-status" data-i18n="badge.accepted">Accepted</span></p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">ATCNet-CIAM for Multi-Session Motor Imagery EEG Signal Classification</h4>
               <p class="pub-authors">Hai Le, Hai Nguyen, Vu Truong, Nguyen Nguyen, <b class="me">Nguyen Thai Anh</b>, and Tu Ngo</p>
-              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Robotics for Sustainable Development (ISRSD)</em>, 2026.</p>
-              <div class="badges"><span class="badge badge-accepted" data-i18n="badge.accepted">Accepted</span></div>
+              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Robotics for Sustainable Development (ISRSD)</em>, 2026. <span class="pub-status" data-i18n="badge.accepted">Accepted</span></p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">TinyCNN: A 193K-Parameter Network for On-Device Plant Disease Detection, with a Cross-Dataset Robustness Diagnosis</h4>
               <p class="pub-authors">Bao Ho Lam Ngoc and <b class="me">Nguyen Thai Anh</b></p>
-              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Robotics for Sustainable Development (ISRSD)</em>, 2026.</p>
-              <div class="badges"><span class="badge badge-accepted" data-i18n="badge.accepted">Accepted</span></div>
+              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Robotics for Sustainable Development (ISRSD)</em>, 2026. <span class="pub-status" data-i18n="badge.accepted">Accepted</span></p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">A Two-Stage ViBERT Framework for Detecting Spam and Toxic Comments on Vietnamese Social Media</h4>
               <p class="pub-authors">T. H. Trong, N. L. T. Minh, T. V. Vu, <b class="me">A. T. Nguyen</b>, T.-H. Nguyen, V. N. Q. Bao, and N. H. Tu*</p>
-              <p class="pub-venue">In <em>Proc. International Conference on Explainable Intelligence in Digital Twins (SIMC)</em>, 2026.</p>
-              <div class="badges"><span class="badge badge-accepted" data-i18n="badge.accepted">Accepted</span></div>
+              <p class="pub-venue">In <em>Proc. International Conference on Explainable Intelligence in Digital Twins (SIMC)</em>, 2026. <span class="pub-status" data-i18n="badge.accepted">Accepted</span></p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">Accuracy Is Not Enough: A Cross-Architecture Audit of Demographic Bias in Deep Knowledge Tracing</h4>
               <p class="pub-authors">Minh Quang Dang, Son Dung Nguyen, Loi Huu Nguyen, Vu Viet Truong, and <b class="me">Nguyen Thai Anh</b></p>
-              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Data Science (ISDS)</em>, 2026.</p>
-              <div class="badges"><span class="badge badge-accepted" data-i18n="badge.accepted">Accepted</span></div>
+              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Data Science (ISDS)</em>, 2026. <span class="pub-status" data-i18n="badge.accepted">Accepted</span></p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">How Far Can Sub-3B Open Language Models Go in Zero-Shot Essay Scoring on an 8GB Consumer GPU?</h4>
               <p class="pub-authors">Son Dung Nguyen, Minh Quang Dang, Loi Huu Nguyen, Vu Viet Truong, and <b class="me">Nguyen Thai Anh</b></p>
-              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Data Science (ISDS)</em>, 2026.</p>
-              <div class="badges"><span class="badge badge-accepted" data-i18n="badge.accepted">Accepted</span></div>
+              <p class="pub-venue">In <em>Proc. International Conference on Intelligent Systems and Data Science (ISDS)</em>, 2026. <span class="pub-status" data-i18n="badge.accepted">Accepted</span></p>
             </li>
-          </ol>
-
-          <p class="year-sub">2025</p>
-          <ol class="pub-list">
             <li class="pub-card">
               <h4 class="pub-title">Fusion Ant Optimization: A Multi-heuristic Ant Colony Optimization for Steiner Tree Problem in Social Network Analysis</h4>
               <p class="pub-authors">L. N. Phan Binh and <b class="me">A. T. Nguyen</b></p>
               <p class="pub-venue">In <em>Proc. International Conference on Soft Computing and its Engineering Applications (icSoftComp)</em>, pp. 84–98, 2025.</p>
-              <p class="pub-index">Springer CCIS · Scopus</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
+              <p class="pub-index">Springer CCIS, Scopus</p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">Effective Deterministic WiFi Handover Mechanism with Fuzzy-Inspired Stability Checks</h4>
               <p class="pub-authors">P. B. N. Lam, <b class="me">A. T. Nguyen</b>, and N. H. Tu</p>
               <p class="pub-venue">In <em>Proc. RIVF International Conference on Computing and Communication Technologies (RIVF)</em>, pp. 42–47, 2025.</p>
-              <p class="pub-index">IEEE · Scopus</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
+              <p class="pub-index">IEEE, Scopus</p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">A Hybrid Framework for Semi-Automated Traffic Annotation: Integrating YOLOv11 Object Detection with CLIP Semantic Verification</h4>
               <p class="pub-authors">N. C. Hai, N. M. Phuc, N. H. Tu, and <b class="me">A. T. Nguyen</b></p>
               <p class="pub-venue">In <em>Proc. RIVF International Conference on Computing and Communication Technologies (RIVF)</em>, pp. 203–208, 2025.</p>
-              <p class="pub-index">IEEE · Scopus</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
+              <p class="pub-index">IEEE, Scopus</p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">Swin-PResU: Hybrid Swin ViT and Pruned Residual CNN for Precise Brain Tumor MRI Segmentation</h4>
               <p class="pub-authors">N. P. Nguyen, D. T. T. Hang, T. V. Vu, N. H. Tu, and <b class="me">A. T. Nguyen</b></p>
               <p class="pub-venue">In <em>Proc. RIVF International Conference on Computing and Communication Technologies (RIVF)</em>, pp. 149–154, 2025.</p>
-              <p class="pub-index">IEEE · Scopus</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
+              <p class="pub-index">IEEE, Scopus</p>
             </li>
             <li class="pub-card">
               <h4 class="pub-title">Fruit Ripeness Detection: A Comparative Analysis of State-of-the-Art YOLO Models</h4>
               <p class="pub-authors">P. Q. Minh, L. N. Tan, N. H. Tu, and <b class="me">A. T. Nguyen</b></p>
               <p class="pub-venue">In <em>Proc. RIVF International Conference on Computing and Communication Technologies (RIVF)</em>, pp. 699–704, 2025.</p>
-              <p class="pub-index">IEEE · Scopus</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
+              <p class="pub-index">IEEE, Scopus</p>
             </li>
-          </ol>
-
-          <p class="year-sub">2021</p>
-          <ol class="pub-list">
             <!-- Vietnamese-language paper: the byline deliberately keeps Vietnamese
                  name order and diacritics, matching the title and venue. -->
             <li class="pub-card">
               <h4 class="pub-title">Phát triển hệ khuyến nghị việc làm cho sinh viên Công nghệ Thông tin theo năng lực học tập đáp ứng nhu cầu doanh nghiệp</h4>
               <p class="pub-authors"><b class="me">Nguyễn Thái Anh</b> và Phan Hồ Viết Trường</p>
               <p class="pub-venue">In <em>Proc. Hội nghị Quốc gia về Nghiên cứu Cơ bản và Ứng dụng CNTT (FAIR)</em>, 2021.</p>
-              <div class="badges"><span class="badge badge-published" data-i18n="badge.published">Published</span></div>
             </li>
           </ol>
         </div>
@@ -264,52 +168,52 @@
       <div class="container">
         <div class="section-head">
           <h2 class="section-title" data-i18n="research.submitted.title">Submitted manuscripts</h2>
-          <p class="section-sub" data-i18n="research.submitted.intro">Work submitted and not yet published. Bold marks my name, an asterisk the corresponding author. A quartile describes the journal, not the manuscript.</p>
+          <p class="section-sub" data-i18n="research.submitted.intro">Work submitted and not yet published, grouped by stage. The quartile in brackets describes the journal, not the manuscript.</p>
         </div>
 
-        <div class="pub-group">
+        <div class="pub-group bib-S">
           <h3 class="year-label" data-i18n="research.submitted.revision.title">Major revision</h3>
           <ol class="pub-list">
             <li class="pub-card pub-compact">
               <h4 class="pub-title">Hierarchical Empirical-Bayes Naive Bayes: Minimax Smoothing and Calibration with AODE Extension</h4>
               <p class="pub-authors"><b class="me">A. T. Nguyen</b>, T. V. Vu, T. T. Thanh, V. N. Q. Bao, and N. H. Tu*</p>
-              <p class="pub-venue">Major revision at <em>Knowledge-Based Systems</em> (Q1 · Scimago 2025).</p>
+              <p class="pub-venue">Major revision at <em>Knowledge-Based Systems</em> (Q1, SJR 2025).</p>
             </li>
             <li class="pub-card pub-compact">
               <h4 class="pub-title">FSS-UBrain: Multi-region Few-Shot Brain Tumor MRI Segmentation</h4>
               <p class="pub-authors">T. V. Vu, N. P. Nguyen, D. T. T. Hang, T. T. Thanh, V. N. Q. Bao, <b class="me">A. T. Nguyen</b>, and N. H. Tu*</p>
-              <p class="pub-venue">Major revision at <em>Neurocomputing</em> (Q1 · Scimago 2025).</p>
+              <p class="pub-venue">Major revision at <em>Neurocomputing</em> (Q1, SJR 2025).</p>
             </li>
           </ol>
         </div>
 
-        <div class="pub-group">
+        <div class="pub-group bib-S">
           <h3 class="year-label" data-i18n="research.submitted.review.title">Under review</h3>
           <ol class="pub-list">
             <li class="pub-card pub-compact">
               <h4 class="pub-title">How Many Categories Are Enough? Distribution-Free Certification Limits for Few-Shot Anomaly Thresholds</h4>
               <p class="pub-authors">Gia Huy Thai and <b class="me">Nguyen Thai Anh</b>*</p>
-              <p class="pub-venue">Submitted to <em>Neurocomputing</em> (Q1 · Scimago 2025).</p>
+              <p class="pub-venue">Submitted to <em>Neurocomputing</em> (Q1, SJR 2025).</p>
             </li>
             <li class="pub-card pub-compact">
               <h4 class="pub-title">Recovering Cross-Domain Bearing Fault Diagnosis Under Leakage-Free Evaluation: A Representation-and-Few-Label Recipe</h4>
               <p class="pub-authors">Nguyen Hong Duc and <b class="me">Nguyen Thai Anh</b>*</p>
-              <p class="pub-venue">Submitted to <em>Expert Systems with Applications</em> (Q1 · Scimago 2025).</p>
+              <p class="pub-venue">Submitted to <em>Expert Systems with Applications</em> (Q1, SJR 2025).</p>
             </li>
             <li class="pub-card pub-compact">
               <h4 class="pub-title">A Lightweight Syndrome-Conditioned Refiner for Suppressing the Error Floor of Quantized Transformer Decoders</h4>
               <p class="pub-authors"><b class="me">A. T. Nguyen</b>, N. H. Tu*, T. V. Le, N. C. Luong, T. T. Thanh, V. N. Q. Bao, and T.-H. Vu</p>
-              <p class="pub-venue">Submitted to <em>IEEE Transactions on Vehicular Technology</em> (Q1 · Scimago 2025).</p>
+              <p class="pub-venue">Submitted to <em>IEEE Transactions on Vehicular Technology</em> (Q1, SJR 2025).</p>
             </li>
             <li class="pub-card pub-compact">
               <h4 class="pub-title">Trust-Aware Multi-Fidelity Global Sensitivity Analysis for Fast-Charging Lithium-Ion Cell Design: Which SPM Parameter Rankings Survive the DFN Fidelity Gap</h4>
               <p class="pub-authors"><b class="me">Nguyen Thai Anh</b>*, Nguyen Hong Duc, and Nguyen Hoang Khan</p>
-              <p class="pub-venue">Submitted to <em>Journal of Energy Storage</em> (Q1 · Scimago 2025).</p>
+              <p class="pub-venue">Submitted to <em>Journal of Energy Storage</em> (Q1, SJR 2025).</p>
             </li>
             <li class="pub-card pub-compact">
               <h4 class="pub-title">How Much Heavy-Metal Adsorption ML Accuracy Survives Honest Validation? A Two-Dataset Study of Leakage, Feature Representation, and Calibrated Uncertainty</h4>
               <p class="pub-authors">Phuoc Van Ngo, Vu Viet Truong, Thien Long Nguyen, Dat Thanh Cao, and <b class="me">Nguyen Thai Anh</b>*</p>
-              <p class="pub-venue">Submitted to <em>Neural Computing and Applications</em> (Q1 · Scimago 2025).</p>
+              <p class="pub-venue">Submitted to <em>Neural Computing and Applications</em> (Q1, SJR 2025).</p>
             </li>
             <li class="pub-card pub-compact">
               <h4 class="pub-title">Trustworthy Short Answer Grading on Consumer Hardware: Certified Cost-Weighted Selective Grading with a Mandatory Shift Audit</h4>
@@ -319,7 +223,7 @@
             <li class="pub-card pub-compact">
               <h4 class="pub-title">Beyond Normalized Importance: Integrating PLS-SEM, Necessary Condition Analysis, and Shapley-Based Explainable Machine Learning to Explain and Predict ChatGPT Adoption Among University Students</h4>
               <p class="pub-authors">Loi Huu Nguyen and <b class="me">Nguyen Thai Anh</b>*</p>
-              <p class="pub-venue">Submitted to <em>Education and Information Technologies</em> (Q1 · Scimago 2025).</p>
+              <p class="pub-venue">Submitted to <em>Education and Information Technologies</em> (Q1, SJR 2025).</p>
             </li>
             <li class="pub-card pub-compact">
               <h4 class="pub-title">Valid for Free: Homophily-Gated Conformal Prediction for Training-Free Node Classification with Tabular Foundation Models</h4>
@@ -349,7 +253,7 @@
           </ol>
         </div>
 
-        <div class="pub-group">
+        <div class="pub-group bib-S">
           <h3 class="year-label" data-i18n="research.submitted.abstract.title">Abstract accepted</h3>
           <ol class="pub-list">
             <li class="pub-card pub-compact">
@@ -377,7 +281,7 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="grants">
+    <section class="section" id="grants">
       <div class="container">
         <h2 class="section-title" data-i18n="grants.title">Projects &amp; grants</h2>
         <div class="grant-list">
@@ -432,19 +336,19 @@
       </div>
     </section>
 
-    <section class="section section-alt" id="theses">
+    <section class="section" id="theses">
       <div class="container">
         <h2 class="section-title" data-i18n="research.theses.title">Theses</h2>
         <div class="thesis-grid">
           <article class="thesis">
             <p class="thesis-kicker" data-i18n="research.thesis.msc.kicker">MSc · 2024 · AIT, Thailand</p>
             <p class="thesis-title">Generalized Data-Driven Method for Separating Wood and Leaves in Terrestrial LiDAR Point Clouds from Diverse Tree Species</p>
-            <p class="thesis-degree" data-i18n="research.thesis.msc.degree">Master of Science in Data Science and Artificial Intelligence — Asian Institute of Technology (AIT), Thailand.</p>
+            <p class="thesis-degree" data-i18n="research.thesis.msc.degree">Master of Science in Data Science and Artificial Intelligence, Asian Institute of Technology (AIT), Thailand.</p>
           </article>
           <article class="thesis">
             <p class="thesis-kicker" data-i18n="research.thesis.bsc.kicker">BSc · 2022 · Van Lang University</p>
             <p class="thesis-title">Phát triển hệ khuyến nghị việc làm cho sinh viên Công nghệ Thông tin theo năng lực học tập đáp ứng nhu cầu doanh nghiệp</p>
-            <p class="thesis-degree" data-i18n="research.thesis.bsc.degree">Bachelor of Science in Information Technology — Van Lang University, Vietnam.</p>
+            <p class="thesis-degree" data-i18n="research.thesis.bsc.degree">Bachelor of Science in Information Technology, Van Lang University, Vietnam.</p>
           </article>
         </div>
       </div>
@@ -452,17 +356,8 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <p class="footer-name">Nguyen Thai Anh</p>
-        <p class="muted" data-i18n="footer.role">Faculty of Information Technology · Van Lang University</p>
-      </div>
-      <div>
-        <p class="muted">© <span id="year"></span> <span data-i18n="footer.copy">Nguyen Thai Anh.</span></p>
-      </div>
-    </div>
+    <p>&copy; <span id="year"></span> <span data-i18n="footer.copy">Nguyen Thai Anh.</span> <span data-i18n="footer.role">Faculty of Information Technology, Van Lang University</span></p>
   </footer>
-  </div>
 
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/main.js"></script>
