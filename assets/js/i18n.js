@@ -115,9 +115,10 @@ const I18N = {
     // Teaching
     'teaching.h1': 'Courses, advising & supervision',
     'teaching.lede': 'I teach AI, deep learning and data analytics at Van Lang University, with guest teaching at HUIT and previously at VLSC.',
-
-    'teaching.current.title': 'Current teaching · Semester 253 · 2025–2026',
+    'teaching.current.title': 'Current teaching · Semester 271 · 2026–2027',
     'teaching.vlu.subtitle': 'Van Lang University (VLU)',
+    'teaching.huit.subtitle': 'University of Industry and Trade (HUIT)',
+    'teaching.sem.253': 'Semester 253 · 2025–2026',
 
     'teaching.history.title': 'Course history',
     'teaching.sem.252': 'Semester 252 · 2025–2026',
@@ -309,9 +310,10 @@ const I18N = {
     // Teaching
     'teaching.h1': 'Học phần, cố vấn & hướng dẫn',
     'teaching.lede': 'Tôi giảng dạy AI, học sâu và phân tích dữ liệu tại Đại học Văn Lang, đồng thời thỉnh giảng tại HUIT và trước đó tại VLSC.',
-
-    'teaching.current.title': 'Đang giảng dạy · Học kỳ 253 · 2025–2026',
+    'teaching.current.title': 'Đang giảng dạy · Học kỳ 271 · 2026–2027',
     'teaching.vlu.subtitle': 'Đại học Văn Lang (VLU)',
+    'teaching.huit.subtitle': 'Đại học Công Thương TP.HCM (HUIT)',
+    'teaching.sem.253': 'Học kỳ 253 · 2025–2026',
 
     'teaching.history.title': 'Lịch sử giảng dạy',
     'teaching.sem.252': 'Học kỳ 252 · 2025–2026',
