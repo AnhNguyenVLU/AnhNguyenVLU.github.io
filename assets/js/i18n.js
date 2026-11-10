@@ -32,7 +32,7 @@ const I18N = {
     'news.7.html': 'Joined the Faculty of Information Technology at Van Lang University as a lecturer.',
     'news.8.date': '2024',
     'news.8.html': 'Completed the MSc in Data Science and Artificial Intelligence at AIT, Thailand.',
-    'research.scholar.html': '<a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>: 8 citations, h-index 1 (August 2026).',
+    'research.scholar.html': '<a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>: 17 citations, h-index 3 (November 2026).',
     'footer.role': 'Faculty of Information Technology, Van Lang University',
     'footer.copy': 'Nguyen Thai Anh.',
 
@@ -227,7 +227,7 @@ const I18N = {
     'news.7.html': 'Về công tác tại Khoa Công nghệ Thông tin, Đại học Văn Lang, với vai trò giảng viên.',
     'news.8.date': '2024',
     'news.8.html': 'Hoàn thành chương trình Thạc sĩ Khoa học Dữ liệu và Trí tuệ Nhân tạo tại AIT, Thái Lan.',
-    'research.scholar.html': '<a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>: 8 trích dẫn, chỉ số h bằng 1 (tháng 8/2026).',
+    'research.scholar.html': '<a href="https://scholar.google.com/citations?hl=en&user=YZFnMJYAAAAJ" target="_blank" rel="noopener">Google Scholar</a>: 17 trích dẫn, chỉ số h bằng 3 (tháng 11/2026).',
     'footer.role': 'Khoa Công nghệ Thông tin, Đại học Văn Lang',
     'footer.copy': 'Nguyễn Thái Anh.',
 
